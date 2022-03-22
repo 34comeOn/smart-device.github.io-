@@ -1,0 +1,233 @@
+.cruises__container {
+  padding-top: 86px;
+  padding-bottom: 120px;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0 auto;
+  max-width: 1366px;
+
+  @include vp-1023 {
+    padding-top: 68px;
+    padding-bottom: 100px;
+  }
+
+  @include vp-767 {
+    padding-top: 34px;
+    padding-bottom: 65px;
+    min-width: 320px;
+  }
+}
+
+.cruises__container h2 {
+  font-size: 28px;
+  line-height: 42px;
+  text-align: center;
+  padding-bottom: 26px;
+  letter-spacing: 1px;
+
+  @include vp-1023 {
+    font-size: 25px;
+    padding-bottom: 29px;
+  }
+
+  @include vp-767 {
+    font-size: 23px;
+    padding-bottom: 9px;
+  }
+}
+
+.cruises__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: min-content;
+  column-gap: 30px;
+  row-gap: 30px;
+  width: min-content;
+  margin: 0 auto;
+
+  @include vp-1365 {
+    grid-template-columns: 1fr 1fr 1fr;
+    width: min-content;
+    margin: 0 auto;
+  }
+
+  @include vp-1094 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cruises__item {
+  position: relative;
+  background-color: $color-dark-blue;
+  height: 386px;
+  width: 260px;
+  display: grid;
+  grid-template-rows: 386px;
+  grid-template-columns: 260px;
+
+  box-sizing: border-box;
+
+  @include vp-1094 {
+    width: 309px;
+    grid-template-columns: 309px;
+  }
+
+  @include vp-767 {
+    width: 270px;
+    grid-template-columns: 270px;
+  }
+
+  &:hover {
+    box-shadow: 0 0 15px 8px $color-dark-grey;
+    outline: 2px solid $color-grey;
+  }
+
+  &:focus-within {
+    box-shadow: 0 0 15px 7px $color-dark-blue;
+    outline: 1px solid $color-dark-blue;
+  }
+}
+
+.cruises__item:focus-within .cruises__cover-wrapper {
+  display: none;
+}
+
+.cruises__cover-wrapper {
+  grid-row: 1/2;
+  grid-column: 1/2;
+  z-index: 2;
+}
+
+.cruises__cover-wrapper img {
+  width: 260px;
+  height: 386px;
+  object-fit: cover;
+
+  @include vp-1094 {
+    width: 309px;
+    height: 386px;
+  }
+
+  @include vp-767 {
+    width: 270px;
+    height: 386px;
+  }
+}
+
+.cruises__cover-wrapper h3 {
+  position: absolute;
+  color: $color-default-white;
+  bottom: 2px;
+  left: 31px;
+  font-family: $ff-placeholder;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+
+  @include vp-1023 {
+    bottom: 11px;
+    left: 36px;
+  }
+
+  @include vp-767 {
+    bottom: -1px;
+    left: 26px;
+  }
+}
+
+.cruises__description-item h3 {
+  padding-bottom: 5px;
+  color: $color-default-white;
+  font-family: $ff-placeholder;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+
+  @include vp-1023 {
+    padding-bottom: 1px;
+  }
+}
+
+.cruises__item:hover .cruises__cover-wrapper {
+  display: none;
+}
+
+.cruises__info-wrapper {
+  grid-row: 1/2;
+  grid-column: 1/2;
+  padding: 20px 15px 35px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 386px;
+
+  @include vp-1094 {
+    padding-left: 35px;
+  }
+
+  @include vp-767 {
+    padding: 35px 25px;
+    padding-top: 23px;
+  }
+}
+
+.cruises__description-list {
+  margin-bottom: 32px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  &:focus {
+    box-shadow: 0 0 15px 7px $color-dark-grey;
+    outline: none;
+  }
+}
+
+.cruises__description-item {
+  margin-top: -9px;
+}
+
+.cruises__description-item h4 {
+  color: $color-default-white;
+  font-family: $ff-placeholder;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+}
+
+.cruises__description-item span {
+  color: $color-grey;
+  font-family: $ff-placeholder;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  margin-top: -16px;
+}
+
+.cruises__info-link {
+  height: 40px;
+  width: 210px;
+  padding-top: 10px;
+  z-index: 1;
+
+  @include vp-1094 {
+    width: 239px;
+  }
+
+  @include vp-767 {
+    width: 220px;
+  }
+
+  &:hover {
+    background-color: $color-dark-grey;
+  }
+
+  &:focus {
+    background-color: $color-input-focus;
+  }
+}

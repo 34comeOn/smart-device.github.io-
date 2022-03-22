@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.min.css">
+    <meta name="description" content="Описание проекта">
+    <title>Круизы в Антарктику</title>
+    <link rel="preload" href="fonts/montserrat-regular.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  </head>
+
+
+  <body class="body">
+    <div class="wrapper wrapper--menu-closed wrapper--nojs">
+      <header class="header">
+        <div class="container header__container">
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="intro">
+          <div class="intro__container container">
+          </div>
+        </section>
+
+        <section class="about" id="places">
+          <div class="about__container container">
+          </div>
+        </section>
+
+        <section class="booking" id="booking">
+          <div class="booking__container container">
+            <div class="booking__intro-wrapper">
+              <h2>
+                Раннее<br> бронирование
+              </h2>
+              <p>
+                Забронируйте тур<br> за 3-6 месяцев<br> до даты выезда<br> и сэкономьте до 50%
+              </p>
+            </div>
+            <form class="booking__form" action="https://echo.htmlacademy.ru" method="post">
+              <fieldset class="booking__feildset">
+                <h3>
+                  Оставьте заявку<br> и мы свяжемся с вами<br> в ближайшее время
+                </h3>
+                <ul class="booking__list list">
+                  <li class="booking__item">
+                    <input class="booking__input name-input" type="text" placeholder="Имя" name="name" aria-label="введите имя" required>
+                  </li>
+                  <li class="booking__item">
+                    <input class="booking__input phone-input" type="tel" placeholder="Телефон" name="phone" aria-label="введите телефон" required>
+                  </li>
+                  <li class="booking__item ">
+                    <input class="booking__input email-input" type="email" placeholder="Email" name="e-mail" aria-label="введите почту" required>
+                  </li>
+                  <li class="booking__item booking__item-checkbox">
+                    <input class="booking__checkbox" type="checkbox" id="checkbox" name="confirm" aria-label="введите имя" checked="checked" required>
+                    <label class="booking__label booking__label--checked" for="checkbox" tabindex="0">Я согласен на обработку моих персональных данных</label>
+                  </li>
+                </ul>
+                <button class="booking__button button" type="submit" aria-label="Обратная связь">
+                  Оставить заявку
+                </button>
+              </fieldset>
+            </form>
+          </div>
+        </section>
+
+
+      </main>
+
+      <footer class="footer">
+        <div class="container footer__container">
+        </div>
+      </footer>
+
+    </div>
+    <script src="js/vendor.min.js"></script>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>
