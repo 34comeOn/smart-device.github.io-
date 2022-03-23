@@ -1,1 +1,69 @@
+.header {
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
 
+.header__container {
+  background: linear-gradient(180deg, #041827 84.9%, rgba(4, 24, 39, 0) 100%);
+  position: fixed;
+  min-height: 120px;
+  display: flex;
+  justify-content: space-between;
+
+  @include vp-1023 {
+    position: static;
+  }
+}
+
+.header__link {
+  pointer-events: none;
+}
+
+.header__logo {
+  display: block;
+
+  @include vp-769 {
+    display: none;
+  }
+}
+
+.header__logo--mobile {
+  display: none;
+
+  @include vp-769 {
+    display: block;
+  }
+}
+
+.header__item a {
+  font-family: $ff-placeholder-decorative-regular;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  display: block;
+  color: $color-font-white;
+}
+
+.header__button-link {
+  display: block;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 17px;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: $ff-placeholder-main-bold;
+  font-weight: 700;
+  background-color: $color-transparent;
+  border: 1px solid $color-font-white;
+  border-radius: 3px;
+  user-select: none;
+  color: $color-font-white;
+  text-transform: uppercase;
+  width: 160px;
+  height: 40px;
+  padding-top: 9px;
+
+  @include vp-1023 {
+    display: none;
+  }
+}

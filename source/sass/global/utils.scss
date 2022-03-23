@@ -15,7 +15,7 @@
     grid-template-columns: 1fr;
   }
 
-  @include vp-767 {
+  @include vp-769 {
     grid-template-rows: min-content 1fr min-content;
     grid-template-columns: 1fr;
   }
@@ -46,7 +46,7 @@
   line-height: 21px;
   box-sizing: border-box;
   text-align: center;
-  font-family: $ff-placeholder-semibold;
+  font-family: $ff-placeholder-main-regular;
   font-weight: 600;
   background-color: $color-default-white;
   user-select: none;

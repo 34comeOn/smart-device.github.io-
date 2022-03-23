@@ -4,10 +4,13 @@
 // Default
 
 $color-default-black:               #000000;
-$color-default-white:               #ffffff;
+$color-default-white:               #f8fdff;
+$color-font-white:                  #f2f5f6;
+$color-blue:                        #00b2ff;
 $color-grey:                        #d8d8d9;
+$color-light-grey:                  #ebebeb;
 $color-dark-grey:                   #7f7f85;
-$color-background:                  #5493ce;
+$color-card-background:             #c5c4c9;
 $color-input-focus:                 #9ecbf5;
 $color-menu-opened:                 #8095b3;
 $color-transparent:                 rgba(255, 255, 255, 0);
@@ -51,7 +54,7 @@ $trans-600:                         0.6s $tf-default;
 
 $vp-320:                            320px;
 $vp-375:                            375px;
-$vp-768:                            768px;
+$vp-770:                            770px;
 $vp-830:                            830px;
 $vp-1024:                           1024px;
 $vp-1095:                           1095px;

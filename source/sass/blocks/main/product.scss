@@ -1,0 +1,89 @@
+.product__card {
+  display: block;
+  width: 350px;
+  height: 650px;
+
+  @include vp-1023 {
+    width: 670px;
+    height: 250px;
+  }
+
+  @include vp-769 {
+    width: 270px;
+    height: 250px;
+  }
+
+  &:focus {
+    outline: 5px solid $color-dark-grey;
+  }
+}
+
+.product__card--manufacture {
+  background-color: $color-card-background;
+  background-image: url("../img/gallery/background/cards/manufacture-desktop@1x.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include vp-1023 {
+    background-image: url("../img/gallery/background/cards/manufacture-tablet@1x.jpg");
+  }
+
+  @include vp-769 {
+    background-image: url("../img/gallery/background/cards/manufacture-mobile@1x.jpg");
+  }
+
+  @include retina {
+    @include vp-1919 {
+      background-image: url("../img/gallery/background/cards/manufacture-desktop@2x.jpg");
+    }
+
+    @include vp-1023 {
+      background-image: url("../img/gallery/background/cards/manufacture-tablet@2x.jpg");
+    }
+
+    @include vp-769 {
+      background-image: url("../img/gallery/background/cards/manufacture-mobile@2x.jpg");
+    }
+  }
+}
+
+.product__card h3 {
+  padding-top: 50px;
+  padding-left: 40px;
+  color: $color-font-white;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+
+  @include vp-1023 {
+    padding-top: 40px;
+    padding-left: 45px;
+  }
+
+  @include vp-769 {
+    padding-top: 30px;
+    padding-left: 30px;
+  }
+}
+
+.product__icon {
+  position: relative;
+  bottom: -460px;
+  left: 290px;
+
+  @include vp-1023 {
+    bottom: -70px;
+    left: 610px;
+  }
+
+  @include vp-769 {
+    width: 40px;
+    height: 40px;
+    bottom: -100px;
+    left: 230px;
+  }
+}
+
+.product__card:hover .product__icon {
+  fill: $color-card-background;
+}

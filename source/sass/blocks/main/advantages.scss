@@ -1,0 +1,40 @@
+.advantages__item {
+  min-width: 270px;
+  min-height: 300px;
+  box-sizing: border-box;
+  border: 1px solid $color-light-grey;
+  border-left: 5px solid $color-blue;
+  padding: 40px 45px;
+
+  &:hover {
+    background-color: $color-blue;
+  }
+  &:hover {
+    background-color: $color-blue;
+  }
+}
+
+.advantages__item:hover .advantages__icon {
+  fill: $color-font-white;
+}
+
+.advantages__item h3 {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 34px;
+  color: $color-blue;
+}
+
+.advantages__item:hover h3 {
+  color: $color-font-white;
+}
+
+.advantages__item p {
+  font-size: 16px;
+  line-height: 22px;
+  font-family: $ff-placeholder-decorative-regular;
+}
+
+.advantages__item:hover p {
+  color: $color-font-white;
+}
