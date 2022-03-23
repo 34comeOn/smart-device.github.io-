@@ -9,6 +9,7 @@
   min-height: 120px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   @include vp-1023 {
     position: static;
@@ -35,6 +36,11 @@
   }
 }
 
+.header__list {
+  display: flex;
+  justify-content: space-between;
+}
+
 .header__item a {
   font-family: $ff-placeholder-decorative-regular;
   font-weight: 400;
@@ -42,23 +48,72 @@
   line-height: 18px;
   display: block;
   color: $color-font-white;
+
+  @include vp-1023 {
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    padding-left: 23px;
+  }
+}
+
+.header__item {
+  margin-right: 60px;
+}
+
+.header__item--email a {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    top: -1px;
+    left: -31px;
+    background-color: $color-transparent;
+    background-image: url("../img/svg/envelope.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include vp-1023 {
+      top: 0px;
+      left: 1px;
+    }
+  }
+}
+
+.header__item--phone a {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    top: -1px;
+    left: -31px;
+    background-color: $color-transparent;
+    background-image: url("../img/svg/phone.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include vp-1023 {
+      top: 0px;
+      left: 1px;
+    }
+  }
 }
 
 .header__button-link {
-  display: block;
-  cursor: pointer;
   font-size: 14px;
   line-height: 17px;
-  box-sizing: border-box;
-  text-align: center;
-  font-family: $ff-placeholder-main-bold;
-  font-weight: 700;
   background-color: $color-transparent;
   border: 1px solid $color-font-white;
   border-radius: 3px;
-  user-select: none;
   color: $color-font-white;
-  text-transform: uppercase;
   width: 160px;
   height: 40px;
   padding-top: 9px;

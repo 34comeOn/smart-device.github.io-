@@ -40,14 +40,11 @@
 
 .button {
   display: block;
-  border: none;
   cursor: pointer;
-  font-size: 14px;
-  line-height: 21px;
   box-sizing: border-box;
   text-align: center;
-  font-family: $ff-placeholder-main-regular;
-  font-weight: 600;
-  background-color: $color-default-white;
+  font-family: $ff-placeholder-main-bold;
+  font-weight: 700;
   user-select: none;
+  text-transform: uppercase;
 }
