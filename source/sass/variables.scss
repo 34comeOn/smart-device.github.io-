@@ -30,12 +30,10 @@ $fz-default:                        16px;
 
 // у некоторых шрифтов в ios возникают проблемы с символом рубля
 // https://www.artlebedev.ru/kovodstvo/sections/159/#13
-$ff-rouble:                         "Rouble", "Arial", sans-serif;
 
-$ff-placeholder:                    "Montserrat-Regular", "Arial", sans-serif;
-$ff-placeholder-medium:             "Montserrat-Medium", "Arial", sans-serif;
-$ff-placeholder-semibold:           "Montserrat-Semibold", "Arial", sans-serif;
-$ff-placeholder-bold:               "Montserrat-Bold", "Arial", sans-serif;
+$ff-placeholder-main-regular:                  "RobotoCondensed-Regular", "Arial", sans-serif;
+$ff-placeholder-main-bold:                     "RobotoCondensed-Bold", "Arial", sans-serif;
+$ff-placeholder-decorative-regular:            "PTMono-Regular", "Arial", sans-serif;
 
 // Animation
 // ---------------------------------
