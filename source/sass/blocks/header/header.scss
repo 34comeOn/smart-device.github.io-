@@ -1,19 +1,24 @@
 .header {
   grid-row: 1/2;
   grid-column: 1/2;
-}
-
-.header__container {
-  background: linear-gradient(180deg, #041827 84.9%, rgba(4, 24, 39, 0) 100%);
-  position: fixed;
   min-height: 120px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: linear-gradient(180deg, #041827 84.9%, rgba(4, 24, 39, 0) 100%);
+  z-index: 10;
 
   @include vp-1023 {
     position: static;
   }
+}
+
+.header__container {
+  min-height: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header__link {
