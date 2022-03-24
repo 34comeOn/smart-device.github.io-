@@ -6,38 +6,59 @@
 
 .footer__container {
   min-height: 280px;
+  height: min-content;
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
   padding-top: 55px;
   padding-bottom: 55px;
   box-sizing: border-box;
 
   @include vp-1023 {
-    min-height: 120px;
+    padding: 50px;
+    min-height: 460px;
+    display: grid;
+    grid-template-rows: min-content min-content;
+    grid-template-columns: 1fr 1fr;
   }
 
   @include vp-769 {
-    min-height: 283px;
+    padding: 35px;
+    min-height: 325px;
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
 }
 
 .footer__icons-wrapper {
-  width: 375px;
-  padding-right: 160px;
+  width: 215px;
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: flex-start;
-  min-height: 230px;
-  margin-top: 0;
+
+  @include vp-1023 {
+    width: 100%;
+    grid-column: 1/3;
+    grid-row: 1/2;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 30px;
+  }
+
+  @include vp-769 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .footer__sochials-list {
   display: flex;
-  flex-wrap: wrap;padding-left: 15px;
+  flex-wrap: wrap;
+  padding-left: 15px;
 }
 
 .footer__sochials-item {
@@ -46,28 +67,137 @@
 
 .footer__link-logo {
   padding-bottom: 20px;
+
+  @include vp-1023 {
+    padding-bottom: 0;
+  }
 }
 
-.footer__navigation-wrapper h3 {
+.footer__navigation {
+  position: relative;
+
+  @include vp-769 {
+    width: 100%;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left:-200px;
+      width: 1000px;
+      height: 1px;
+      background-color: $color-font-white;
+      opacity: 0.7;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left:-200px;
+      width: 1000px;
+      height: 1px;
+      background-color: $color-font-white;
+      opacity: 0.7;
+    }
+  }
+}
+
+.footer__navigation-wrapper {
+  width: 500px;
+  position: relative;
+
+  @include vp-1023 {
+    width: 250px;
+  }
+
+  @include vp-769 {
+    width: 100%;
+    overflow: hidden;
+    height: 30px;
+  }
+}
+
+.footer__navigation-wrapper h3, .footer__contacts-wrapper h3 {
   text-transform: uppercase;
   color: $color-font-white;
   font-size: 15px;
   line-height: 16px;
   font-weight: 400;
-  margin-top: -30px;
+  margin-top: 3px;
 }
 
 .footer__navigation-item {
   width: 250px;
   padding-right: 30px;
   box-sizing: border-box;
+  margin-bottom: 10px;
 }
 
-.footer__navigation-wrapper a {
+.footer__navigation-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: min-content;
+  width: 500px;
+  height: min-content;
+
+  @include vp-1023 {
+    grid-template-columns: 1fr;
+    width: 250px;
+  }
+}
+
+.footer__contacts-wrapper {
+  position: relative;
+
+  @include vp-769 {
+    width: 100%;
+
+    &::after {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left: -200px;
+      width: 1000px;
+      height: 1px;
+      background-color: $color-font-white;
+      opacity: 0.7;
+    }
+  }
+}
+
+.footer__contacts-item {
+  width: max-content;
+}
+
+.footer__navigation-wrapper a, .footer__contacts-wrapper a, p {
   color: $color-font-white;
   font-family: $ff-placeholder-decorative-regular;
   font-size: 16px;
   line-height: 22px;
   font-weight: 400;
   opacity: 0.7;
+
+  @include vp-769 {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}
+
+.footer__button-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__toggle {
+  display: none;
+
+  @include vp-769 {
+    display: block;
+    width: 15px;
+    height: 15px;
+    border: none;
+    // background-color: $color-transparent;
+    cursor: pointer;
+  }
 }
