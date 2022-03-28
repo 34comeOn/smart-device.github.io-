@@ -24,10 +24,21 @@
 
   @include vp-769 {
     padding: 35px;
-    min-height: 325px;
+    min-height: 310px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    &::after {
+      position: absolute;
+      content: "";
+      bottom: 34px;
+      left: -200px;
+      width: 1000px;
+      height: 1px;
+      background-color: $color-font-white;
+      opacity: 0.7;
+    }
   }
 }
 
@@ -113,8 +124,16 @@
 
   @include vp-769 {
     width: 100%;
+    height: 55px;
     overflow: hidden;
-    height: 30px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+}
+
+.navigation--opened .footer__navigation-wrapper {
+  @include vp-769 {
+    height: min-content;
   }
 }
 
@@ -152,17 +171,16 @@
 
   @include vp-769 {
     width: 100%;
+    height: 55px;
+    overflow: hidden;
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+}
 
-    &::after {
-      position: absolute;
-      content: "";
-      bottom: 0;
-      left: -200px;
-      width: 1000px;
-      height: 1px;
-      background-color: $color-font-white;
-      opacity: 0.7;
-    }
+.contacts--opened .footer__contacts-wrapper {
+  @include vp-769 {
+    height: min-content;
   }
 }
 
@@ -197,7 +215,66 @@
     width: 15px;
     height: 15px;
     border: none;
-    // background-color: $color-transparent;
+    background-color: $color-transparent;
     cursor: pointer;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 26px;
+      right:0;
+      width: 15px;
+      height: 1px;
+      background-color: $color-font-white;
+    }
+  }
+}
+
+.no-js .footer__toggle {
+  display: none;
+}
+
+.footer__toggle--plus {
+  @include vp-769 {
+    &::after {
+      position: absolute;
+      content: "";
+      right: 7px;
+      top: 19px;
+      width: 1px;
+      height: 15px;
+      background-color: $color-font-white;
+    }
+  }
+}
+
+.contacts-plus-toggle,
+.navigation-plus-toggle {
+  @include vp-769 {
+    &::after {
+      position: absolute;
+      content: "";
+      right: 7px;
+      top: 19px;
+      width: 1px;
+      height: 15px;
+      background-color: $color-font-white;
+    }
+  }
+}
+
+.navigation--opened .navigation-plus-toggle {
+  @include vp-769 {
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.contacts--opened .contacts-plus-toggle {
+  @include vp-769 {
+    &::after {
+      display: none;
+    }
   }
 }

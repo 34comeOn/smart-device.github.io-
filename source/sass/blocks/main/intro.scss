@@ -1,0 +1,114 @@
+.intro {
+  height: 880px;
+  background-color: $color-card-background;
+  background-image: url("../img/gallery/background/intro-background-desktop@1x.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+
+  @include vp-1023 {
+    height: 640px;
+    min-width: 770px;
+    background-image: url("../img/gallery/background/intro-background-tablet@1x.jpg");
+  }
+
+  @include vp-769 {
+    height: 560px;
+    min-width: 320px;
+    background-image: url("../img/gallery/background/intro-background-mobile@1x.jpg");
+  }
+
+  @include retina {
+    @include vp-1919 {
+      background-image: url("../img/gallery/background/intro-background-desktop@2x.jpg");
+    }
+
+    @include vp-1023 {
+      background-image: url("../img/gallery/background/intro-background-tablet@2x.jpg");
+    }
+
+    @include vp-769 {
+      background-image: url("../img/gallery/background/intro-background-mobile@2x.jpg");
+    }
+  }
+}
+
+.intro__container {
+  border-top: 1px solid $color-transparent;
+  padding-left: 125px;
+
+  @include vp-1023 {
+    padding-left: 50px;
+  }
+}
+
+.intro__container h2 {
+  color: $color-font-white;
+  text-transform: uppercase;
+  font-size: 80px;
+  line-height: 94px;
+  padding-top: 305px;
+
+  @include vp-1023 {
+    font-size: 64px;
+    line-height: 75px;
+    padding-top: 180px;
+  }
+
+  @include vp-769 {
+    font-size: 36px;
+    line-height: 42px;
+    width: 270px;
+    padding-top: 150px;
+  }
+}
+
+.intro__container p {
+  font-size: 22px;
+  line-height: 34px;
+  width: 650px;
+
+  @include vp-769 {
+    font-size: 14px;
+    line-height: 22px;
+    width: 270px;
+  }
+}
+
+.intro__button {
+  width: 410px;
+  height: 55px;
+  background-color: $color-blue;
+  color: $color-font-white;
+  font-size: 18px;
+  line-height: 21px;
+  border-radius: 3px;
+  padding-top: 17px;
+
+  @include vp-1023 {
+    margin-left: 50px;
+  }
+
+  @include vp-769 {
+    width: 270px;
+    height: 40px;
+    padding-top: 13px;
+    font-size: 14px;
+    line-height: 16px;
+    margin-left: 0;
+  }
+}
+
+.intro__button--wide {
+  @include vp-769 {
+    display: none;
+  }
+}
+
+.intro__button--short {
+  display: none;
+
+  @include vp-769 {
+    display: block;
+  }
+}

@@ -623,7 +623,6 @@ button,
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1/2;
-  min-height: 120px;
   position: fixed;
   top: 0;
   right: 0;
@@ -635,7 +634,7 @@ button,
 }
 
 .header__container {
-  min-height: 120px;
+  height: 120px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -666,6 +665,9 @@ button,
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 .header__item a {
@@ -727,6 +729,49 @@ button,
   width: 160px;
   height: 40px;
   padding-top: 9px;
+}
+
+.intro {
+  height: 880px;
+  background-color: #c5c4c9;
+  background-image: url("../img/gallery/background/intro-background-desktop@1x.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+}
+
+.intro__container {
+  border-top: 1px solid rgba(255, 255, 255, 0);
+  padding-left: 125px;
+}
+
+.intro__container h2 {
+  color: #f2f5f6;
+  text-transform: uppercase;
+  font-size: 80px;
+  line-height: 94px;
+  padding-top: 305px;
+}
+
+.intro__container p {
+  font-size: 22px;
+  line-height: 34px;
+  width: 650px;
+}
+
+.intro__button {
+  width: 410px;
+  height: 55px;
+  background-color: #00b2ff;
+  color: #f2f5f6;
+  font-size: 18px;
+  line-height: 21px;
+  border-radius: 3px;
+  padding-top: 17px;
+}
+
+.intro__button--short {
+  display: none;
 }
 
 .advantages__item {
@@ -968,6 +1013,171 @@ p {
   display: none;
 }
 
+.no-js .footer__toggle {
+  display: none;
+}
+
+.popup {
+  position: absolute;
+  top: 146px;
+  width: 100%;
+  z-index: 20;
+}
+
+.popup__container {
+  margin: 0 auto;
+  width: 500px;
+  height: 610px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 40px;
+  background-color: #00b2ff;
+}
+
+.popup__close-button {
+  position: relative;
+  right: -412px;
+  top: -14px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.popup__close-button::before,
+.popup__close-button::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  right: 0;
+  width: 29px;
+  height: 1px;
+  background-color: #f2f5f6;
+  cursor: pointer;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.popup__close-button::before {
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.popup__container h3 {
+  font-size: 30px;
+  line-height: 42px;
+  font-weight: 400;
+  color: #f2f5f6;
+  margin-top: -30px;
+}
+
+.popup__container p {
+  font-size: 16px;
+  line-height: 22px;
+  width: 380px;
+  color: #f2f5f6;
+  margin-top: -20px;
+  padding-bottom: 22px;
+}
+
+.popup__fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.popup__fieldset input,
+.popup__fieldset textarea {
+  height: 50px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+  font-family: "PTMono-Regular", "Arial", sans-serif;
+  padding: 15px;
+  font-size: 16px;
+  line-height: 22px;
+  background-color: #041827;
+  cursor: pointer;
+}
+
+.popup__fieldset input:hover,
+.popup__fieldset textarea:hover {
+  background-color: #c5c4c9;
+}
+
+.popup__fieldset textarea {
+  height: 155px;
+}
+
+.popup__fieldset button {
+  font-family: "RobotoCondensed-Bold", "Arial", sans-serif;
+  color: #f2f5f6;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 19px;
+  height: 50px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+  background-color: #041827;
+  letter-spacing: 1px;
+}
+
+.popup__fieldset button:hover {
+  background-color: #c5c4c9;
+  color: #000000;
+}
+
+.popup__fieldset input[type="checkbox"] {
+  display: none;
+}
+
+.popup__fieldset label {
+  font-size: 14px;
+  line-height: 16px;
+  font-family: "PTMono-Regular", "Arial", sans-serif;
+  color: #f2f5f6;
+  padding-left: 23px;
+  cursor: pointer;
+  position: relative;
+}
+
+.popup__fieldset label::before {
+  position: absolute;
+  content: "";
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  top: 3px;
+  left: 0;
+  background-color: #00b2ff;
+  border: 1px solid #f2f5f6;
+  border-radius: 3px;
+  background-image: url("../img/svg/checkbox.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.popup__fieldset label:hover::before {
+  background-color: #041827;
+}
+
+.popup__fieldset label:focus::before {
+  outline: 1px solid #000000;
+}
+
+.popup__fieldset input[type="checkbox"]:not(:checked) + label::before {
+  background-image: none;
+}
+
 /* @media (hover: hover), screen and (min-width: 0\0) {
   &:hover,
   &:focus {
@@ -976,6 +1186,10 @@ p {
 } */
 
 @media (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 1919px), (-o-min-device-pixel-ratio: 3/2) and (max-width: 1919px), (min-resolution: 144dpi) and (max-width: 1919px), (min-resolution: 1.5dppx) and (max-width: 1919px) {
+  .intro {
+    background-image: url("../img/gallery/background/intro-background-desktop@2x.jpg");
+  }
+
   .product__card--manufacture {
     background-image: url("../img/gallery/background/cards/manufacture-desktop@2x.jpg");
   }
@@ -999,11 +1213,24 @@ p {
     position: static;
   }
 
+  .header__container {
+    height: 100px;
+  }
+
+  .header__list {
+    width: 80px;
+    margin-right: 20px;
+  }
+
   .header__item a {
     width: 20px;
     height: 20px;
     overflow: hidden;
     padding-left: 23px;
+  }
+
+  .header__item {
+    margin-right: 0;
   }
 
   .header__item--email a::before {
@@ -1018,6 +1245,30 @@ p {
 
   .header__button-link {
     display: none;
+  }
+
+  .intro {
+    height: 640px;
+    min-width: 770px;
+    background-image: url("../img/gallery/background/intro-background-tablet@1x.jpg");
+  }
+
+  .intro__container {
+    padding-left: 50px;
+  }
+
+  .intro__container h2 {
+    font-size: 64px;
+    line-height: 75px;
+    padding-top: 180px;
+  }
+
+  .intro__button {
+    margin-left: 50px;
+  }
+
+  .main {
+    margin-top: -20px;
   }
 
   .product__card {
@@ -1086,6 +1337,10 @@ p {
 }
 
 @media (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 1023px), (-o-min-device-pixel-ratio: 3/2) and (max-width: 1023px), (min-resolution: 144dpi) and (max-width: 1023px), (min-resolution: 1.5dppx) and (max-width: 1023px) {
+  .intro {
+    background-image: url("../img/gallery/background/intro-background-tablet@2x.jpg");
+  }
+
   .product__card--manufacture {
     background-image: url("../img/gallery/background/cards/manufacture-tablet@2x.jpg");
   }
@@ -1105,11 +1360,51 @@ p {
     padding: 0 25px;
   }
 
+  .header__container {
+    height: 70px;
+  }
+
   .header__logo {
     display: none;
   }
 
   .header__logo--mobile {
+    display: block;
+  }
+
+  .intro {
+    height: 560px;
+    min-width: 320px;
+    background-image: url("../img/gallery/background/intro-background-mobile@1x.jpg");
+  }
+
+  .intro__container h2 {
+    font-size: 36px;
+    line-height: 42px;
+    width: 270px;
+    padding-top: 150px;
+  }
+
+  .intro__container p {
+    font-size: 14px;
+    line-height: 22px;
+    width: 270px;
+  }
+
+  .intro__button {
+    width: 270px;
+    height: 40px;
+    padding-top: 13px;
+    font-size: 14px;
+    line-height: 16px;
+    margin-left: 0;
+  }
+
+  .intro__button--wide {
+    display: none;
+  }
+
+  .intro__button--short {
     display: block;
   }
 
@@ -1140,7 +1435,7 @@ p {
 
   .footer__container {
     padding: 35px;
-    min-height: 325px;
+    min-height: 310px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1151,6 +1446,17 @@ p {
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
+  }
+
+  .footer__container::after {
+    position: absolute;
+    content: "";
+    bottom: 34px;
+    left: -200px;
+    width: 1000px;
+    height: 1px;
+    background-color: #f2f5f6;
+    opacity: 0.7;
   }
 
   .footer__icons-wrapper {
@@ -1194,23 +1500,30 @@ p {
 
   .footer__navigation-wrapper {
     width: 100%;
+    height: 55px;
     overflow: hidden;
-    height: 30px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .navigation--opened .footer__navigation-wrapper {
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
   }
 
   .footer__contacts-wrapper {
     width: 100%;
+    height: 55px;
+    overflow: hidden;
+    padding-top: 18px;
+    padding-bottom: 18px;
   }
 
-  .footer__contacts-wrapper::after {
-    position: absolute;
-    content: "";
-    bottom: 0;
-    left: -200px;
-    width: 1000px;
-    height: 1px;
-    background-color: #f2f5f6;
-    opacity: 0.7;
+  .contacts--opened .footer__contacts-wrapper {
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
   }
 
   .footer__navigation-wrapper a,
@@ -1225,11 +1538,55 @@ p {
     width: 15px;
     height: 15px;
     border: none;
+    background-color: rgba(255, 255, 255, 0);
     cursor: pointer;
+  }
+
+  .footer__toggle::before {
+    position: absolute;
+    content: "";
+    top: 26px;
+    right: 0;
+    width: 15px;
+    height: 1px;
+    background-color: #f2f5f6;
+  }
+
+  .footer__toggle--plus::after {
+    position: absolute;
+    content: "";
+    right: 7px;
+    top: 19px;
+    width: 1px;
+    height: 15px;
+    background-color: #f2f5f6;
+  }
+
+  .contacts-plus-toggle::after,
+  .navigation-plus-toggle::after {
+    position: absolute;
+    content: "";
+    right: 7px;
+    top: 19px;
+    width: 1px;
+    height: 15px;
+    background-color: #f2f5f6;
+  }
+
+  .navigation--opened .navigation-plus-toggle::after {
+    display: none;
+  }
+
+  .contacts--opened .contacts-plus-toggle::after {
+    display: none;
   }
 }
 
 @media (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 769px), (-o-min-device-pixel-ratio: 3/2) and (max-width: 769px), (min-resolution: 144dpi) and (max-width: 769px), (min-resolution: 1.5dppx) and (max-width: 769px) {
+  .intro {
+    background-image: url("../img/gallery/background/intro-background-mobile@2x.jpg");
+  }
+
   .product__card--manufacture {
     background-image: url("../img/gallery/background/cards/manufacture-mobile@2x.jpg");
   }
