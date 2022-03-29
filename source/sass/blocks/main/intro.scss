@@ -13,7 +13,7 @@
   }
 
   @include vp-769 {
-    height: 560px;
+    height: 510px;
     min-width: 320px;
     background-image: url("../img/gallery/background/intro-background-mobile@1x.jpg");
   }
@@ -59,7 +59,8 @@
     font-size: 36px;
     line-height: 42px;
     width: 270px;
-    padding-top: 150px;
+    padding-top: 70px;
+    letter-spacing: 3px;
   }
 }
 
@@ -75,6 +76,8 @@
     font-size: 14px;
     line-height: 22px;
     width: 270px;
+    margin-top: -22px;
+    padding-bottom: 29px;
   }
 }
 
@@ -87,6 +90,7 @@
   line-height: 21px;
   border-radius: 3px;
   padding-top: 17px;
+  letter-spacing: 1px;
 
   @include vp-1023 {
     margin-left: 50px;

@@ -20,7 +20,7 @@
 
   @include vp-769 {
     height: 660px;
-    min-width: 320px;
+    min-width: 220px;
   }
 
   @include retina {
@@ -94,6 +94,10 @@
   color: $color-font-white;
   margin-top: -20px;
   padding-bottom: 22px;
+
+  @include vp-769 {
+    width: 270px;
+  }
 }
 
 .feedback__fieldset {

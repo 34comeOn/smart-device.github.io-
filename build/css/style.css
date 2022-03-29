@@ -667,9 +667,9 @@ button,
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
 }
 
 .header__link {
@@ -797,6 +797,7 @@ button,
   line-height: 21px;
   border-radius: 3px;
   padding-top: 17px;
+  letter-spacing: 1px;
 }
 
 .intro__button--short {
@@ -1785,6 +1786,7 @@ button,
 
   .header__container {
     height: 70px;
+    padding: 15px 25px 0 25px;
   }
 
   .header__logo {
@@ -1795,8 +1797,12 @@ button,
     display: block;
   }
 
+  .header__list {
+    padding-top: 5px;
+  }
+
   .intro {
-    height: 560px;
+    height: 510px;
     min-width: 320px;
     background-image: url("../img/gallery/background/intro-background-mobile@1x.jpg");
   }
@@ -1805,13 +1811,16 @@ button,
     font-size: 36px;
     line-height: 42px;
     width: 270px;
-    padding-top: 150px;
+    padding-top: 70px;
+    letter-spacing: 3px;
   }
 
   .intro__container p {
     font-size: 14px;
     line-height: 22px;
     width: 270px;
+    margin-top: -22px;
+    padding-bottom: 29px;
   }
 
   .intro__button {
@@ -1839,7 +1848,25 @@ button,
   }
 
   .advantages__item {
-    padding: 30px;
+    padding: 30px 30px 13px 25px;
+  }
+
+  .advantages__icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .advantages__item h3 {
+    font-size: 20px;
+    line-height: 28px;
+    margin-top: 7px;
+  }
+
+  .advantages__item p {
+    font-size: 14px;
+    line-height: 19px;
+    margin-top: -10px;
+    height: 171px;
   }
 
   .product__container {
@@ -1910,13 +1937,17 @@ button,
 
   .feedback {
     height: 660px;
-    min-width: 320px;
+    min-width: 220px;
   }
 
   .feedback__container {
     width: 100%;
     padding-bottom: 90px;
     padding-top: 50px;
+  }
+
+  .feedback__container p {
+    width: 270px;
   }
 
   .feedback__fieldset {

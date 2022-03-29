@@ -17,7 +17,7 @@
   height: 120px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 
   @include vp-1023 {
     height: 100px;
@@ -25,6 +25,7 @@
 
   @include vp-769 {
     height: 70px;
+    padding: 15px 25px 0 25px;
   }
 }
 
@@ -56,6 +57,10 @@
   @include vp-1023 {
     width: 80px;
     margin-right: 20px;
+  }
+
+  @include vp-769 {
+    padding-top: 5px;
   }
 }
 
