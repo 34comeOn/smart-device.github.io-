@@ -1,11 +1,30 @@
-.popup {
-  position: absolute;
-  top: 146px;
-  width: 100%;
-  z-index: 20;
+.feedback {
+  height: 840px;
+  padding-left: 822px;
+  background-color: $color-blue;
+  background-image: url("../img/gallery/background/feedback@1x.png");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+
+  @include vp-1023 {
+    height: 580px;
+    min-width: 770px;
+    background-image: none;
+  }
+
+  @include vp-769 {
+    height: 750px;
+    min-width: 320px;
+  }
+
+  @include retina {
+    @include vp-1919 {
+      background-image: url("../img/gallery/background/feedback@2x.png");
+    }
+  }
 }
 
-.popup__container {
+.feedback__container {
   margin: 0 auto;
   width: 500px;
   height: 610px;
@@ -14,35 +33,7 @@
   background-color: $color-blue;
 }
 
-.popup__close-button {
-  position: relative;
-  right: -412px;
-  top: -14px;
-  width: 30px;
-  height: 30px;
-  border: none;
-  background-color: $color-transparent;
-
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    top: 15px;
-    right: 0;
-    width: 29px;
-    height: 1px;
-    background-color: $color-font-white;
-    cursor: pointer;
-    transform: rotate(45deg);
-  }
-
-  &::before {
-    transform: rotate(135deg);
-    box-shadow: none;
-  }
-}
-
-.popup__container h3 {
+.feedback__container h3 {
   font-size: 30px;
   line-height: 42px;
   font-weight: 400;
@@ -50,7 +41,7 @@
   margin-top: -30px;
 }
 
-.popup__container p {
+.feedback__container p {
   font-size: 16px;
   line-height: 22px;
   width: 380px;
@@ -59,15 +50,15 @@
   padding-bottom: 22px;
 }
 
-.popup__fieldset {
+.feedback__fieldset {
   border: none;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.popup__fieldset input,
-.popup__fieldset textarea {
+.feedback__fieldset input,
+.feedback__fieldset textarea {
   height: 50px;
   margin-bottom: 20px;
   width: 100%;
@@ -85,11 +76,11 @@
   }
 }
 
-.popup__fieldset textarea {
+.feedback__fieldset textarea {
   height: 155px;
 }
 
-.popup__fieldset button {
+.feedback__fieldset button {
   font-family: $ff-placeholder-main-bold;
   color: $color-font-white;
   text-transform: uppercase;
@@ -109,11 +100,11 @@
   }
 }
 
-.popup__fieldset input[type="checkbox"] {
+.feedback__fieldset input[type="checkbox"] {
   display: none;
 }
 
-.popup__fieldset label {
+.feedback__fieldset label {
   font-size: 14px;
   line-height: 16px;
   font-family: $ff-placeholder-decorative-regular;
@@ -151,6 +142,6 @@
   }
 }
 
-.popup__fieldset input[type="checkbox"]:not(:checked) + label::before {
+.feedback__fieldset input[type="checkbox"]:not(:checked) + label::before {
   background-image: none;
 }

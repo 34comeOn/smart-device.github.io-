@@ -1,6 +1,33 @@
+.about__container {
+  display: flex;
+  align-items: flex-start;
+  min-height: 320px;
+  max-width: 1370px;
+  box-sizing: border-box;
+  padding-bottom: 100px;
+
+  @include vp-1023 {
+    padding-bottom: 80px;
+  }
+}
+
 .about__container img {
   @include vp-769 {
     display: none;
+  }
+}
+
+.about__info-wrapper {
+  padding-left: 100px;
+  max-width: 1070px;
+  box-sizing: border-box;
+
+  @include vp-1023 {
+    padding-left: 29px;
+  }
+
+  @include vp-769 {
+    padding-left: 0;
   }
 }
 
@@ -8,10 +35,47 @@
   font-size: 36px;
   line-height: 51px;
   font-weight: 400;
+  margin-top: -4px;
+
+  @include vp-769 {
+    font-size: 28px;
+    line-height: 40px;
+  }
 }
 
-.about__info-wrapper p {
+.about__text-box {
+  margin-top: -30px;
+  max-height: min-content;
+  margin-bottom: 14px;
+  overflow: hidden;
+  max-width: 970px;
+
+  @include vp-769 {
+    max-height: 200px;
+  }
+}
+
+.all-text .about__text-box {
+  max-height: min-content;
+}
+
+.about__text-box p {
   font-family: $ff-placeholder-decorative-regular;
+  font-size: 16px;
+  line-height: 22px;
+
+  @include vp-769 {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}
+
+.about__rest-text {
+  display: none;
+}
+
+.all-text .about__rest-text {
+  display: block;
 }
 
 .about__button {
@@ -21,4 +85,11 @@
   border-radius: 3px;
   background-color: $color-default-white;
   color: $color-blue;
+  font-size: 14px;
+  line-height: 16px;
+
+  @include vp-769 {
+    width: 160px;
+    height: 35px;
+  }
 }

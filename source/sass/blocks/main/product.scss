@@ -1,7 +1,60 @@
+.product {
+  background-color: $color-very-dark;
+}
+
+.product__container {
+  padding: 70px 75px 120px 75px;
+
+  @include vp-1023 {
+    padding: 60px 50px 75px 50px;
+  }
+
+  @include vp-769 {
+    padding: 50px 25px 86px 25px;
+  }
+}
+
+.product__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  column-gap: 85px;
+  row-gap: 85px;
+
+  @include vp-1365 {
+    grid-template-columns: 1fr 1fr;
+    width: min-content;
+  }
+
+  @include vp-1023 {
+    display: flex;
+    flex-direction: column;
+    column-gap: 0;
+    row-gap: 0;
+  }
+}
+
+.product__container h2 {
+  color: $color-font-white;
+  font-size: 36px;
+  line-height: 51px;
+  font-weight: 400;
+  margin-top: -20px;
+
+  @include vp-769 {
+    font-size: 28px;
+    line-height: 39px;
+    width: 250px;
+  }
+}
+
 .product__card {
   display: block;
   width: 350px;
   height: 650px;
+  background-color: $color-card-background;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   @include vp-1023 {
     width: 670px;
@@ -19,10 +72,7 @@
 }
 
 .product__card--manufacture {
-  background-color: $color-card-background;
   background-image: url("../img/gallery/background/cards/manufacture-desktop@1x.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
 
   @include vp-1023 {
     background-image: url("../img/gallery/background/cards/manufacture-tablet@1x.jpg");
@@ -47,6 +97,58 @@
   }
 }
 
+.product__card--mounting {
+  background-image: url("../img/gallery/background/cards/mounting-desktop@1x.jpg");
+
+  @include vp-1023 {
+    background-image: url("../img/gallery/background/cards/mounting-tablet@1x.jpg");
+  }
+
+  @include vp-769 {
+    background-image: url("../img/gallery/background/cards/mounting-mobile@1x.jpg");
+  }
+
+  @include retina {
+    @include vp-1919 {
+      background-image: url("../img/gallery/background/cards/mounting-desktop@2x.jpg");
+    }
+
+    @include vp-1023 {
+      background-image: url("../img/gallery/background/cards/mounting-tablet@2x.jpg");
+    }
+
+    @include vp-769 {
+      background-image: url("../img/gallery/background/cards/mounting-mobile@2x.jpg");
+    }
+  }
+}
+
+.product__card--accessories {
+  background-image: url("../img/gallery/background/cards/accessories-desktop@1x.jpg");
+
+  @include vp-1023 {
+    background-image: url("../img/gallery/background/cards/accessories-tablet@1x.jpg");
+  }
+
+  @include vp-769 {
+    background-image: url("../img/gallery/background/cards/accessories-mobile@1x.jpg");
+  }
+
+  @include retina {
+    @include vp-1919 {
+      background-image: url("../img/gallery/background/cards/accessories-desktop@2x.jpg");
+    }
+
+    @include vp-1023 {
+      background-image: url("../img/gallery/background/cards/accessories-tablet@2x.jpg");
+    }
+
+    @include vp-769 {
+      background-image: url("../img/gallery/background/cards/accessories-mobile@2x.jpg");
+    }
+  }
+}
+
 .product__card h3 {
   padding-top: 50px;
   padding-left: 40px;
@@ -54,6 +156,7 @@
   font-size: 20px;
   line-height: 30px;
   font-weight: 400;
+  width: 200px;
 
   @include vp-1023 {
     padding-top: 40px;

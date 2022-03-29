@@ -474,31 +474,31 @@ textarea {
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
   opacity: 1;
-  color: #7f7f85;
+  color: #f2f5f6;
 }
 
 input::-moz-placeholder,
 textarea::-moz-placeholder {
   opacity: 1;
-  color: #7f7f85;
+  color: #f2f5f6;
 }
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
   opacity: 1;
-  color: #7f7f85;
+  color: #f2f5f6;
 }
 
 input::-ms-input-placeholder,
 textarea::-ms-input-placeholder {
   opacity: 1;
-  color: #7f7f85;
+  color: #f2f5f6;
 }
 
 input::placeholder,
 textarea::placeholder {
   opacity: 1;
-  color: #7f7f85;
+  color: #f2f5f6;
 }
 
 input:invalid,
@@ -605,6 +605,14 @@ button,
   -ms-user-select: none;
   user-select: none;
   text-transform: uppercase;
+}
+
+.title--big-screen {
+  display: block;
+}
+
+.title--mobile {
+  display: none;
 }
 
 .container {
@@ -754,9 +762,12 @@ button,
 }
 
 .intro__container p {
-  font-size: 22px;
+  font-size: 20px;
   line-height: 34px;
-  width: 650px;
+  font-family: "PTMono-Regular", "Arial", sans-serif;
+  color: #f2f5f6;
+  font-weight: 400;
+  width: 625px;
 }
 
 .intro__button {
@@ -774,6 +785,21 @@ button,
   display: none;
 }
 
+.advantages__list {
+  max-width: 1222px;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+  grid-template-columns: 50% 50%;
+  row-gap: 31px;
+  -webkit-column-gap: 31px;
+  -moz-column-gap: 31px;
+  column-gap: 31px;
+  grid-auto-rows: 1fr 1fr;
+}
+
 .advantages__item {
   min-width: 270px;
   min-height: 300px;
@@ -782,10 +808,6 @@ button,
   border: 1px solid #ebebeb;
   border-left: 5px solid #00b2ff;
   padding: 40px 45px;
-}
-
-.advantages__item:hover {
-  background-color: #00b2ff;
 }
 
 .advantages__item:hover {
@@ -811,16 +833,53 @@ button,
   font-size: 16px;
   line-height: 22px;
   font-family: "PTMono-Regular", "Arial", sans-serif;
+  color: #000000;
+  height: 120px;
+  overflow: hidden;
+  overflow-y: auto;
 }
 
 .advantages__item:hover p {
   color: #f2f5f6;
+  opacity: 1;
+}
+
+.product {
+  background-color: #041827;
+}
+
+.product__container {
+  padding: 70px 75px 120px 75px;
+}
+
+.product__list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr;
+  grid-template-rows: 1fr;
+  -webkit-column-gap: 85px;
+  -moz-column-gap: 85px;
+  column-gap: 85px;
+  row-gap: 85px;
+}
+
+.product__container h2 {
+  color: #f2f5f6;
+  font-size: 36px;
+  line-height: 51px;
+  font-weight: 400;
+  margin-top: -20px;
 }
 
 .product__card {
   display: block;
   width: 350px;
   height: 650px;
+  background-color: #c5c4c9;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .product__card:focus {
@@ -828,10 +887,15 @@ button,
 }
 
 .product__card--manufacture {
-  background-color: #c5c4c9;
   background-image: url("../img/gallery/background/cards/manufacture-desktop@1x.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+}
+
+.product__card--mounting {
+  background-image: url("../img/gallery/background/cards/mounting-desktop@1x.jpg");
+}
+
+.product__card--accessories {
+  background-image: url("../img/gallery/background/cards/accessories-desktop@1x.jpg");
 }
 
 .product__card h3 {
@@ -841,6 +905,7 @@ button,
   font-size: 20px;
   line-height: 30px;
   font-weight: 400;
+  width: 200px;
 }
 
 .product__icon {
@@ -853,14 +918,62 @@ button,
   fill: #c5c4c9;
 }
 
+.about__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  min-height: 320px;
+  max-width: 1370px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-bottom: 100px;
+}
+
+.about__info-wrapper {
+  padding-left: 100px;
+  max-width: 1070px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 .about__info-wrapper h2 {
   font-size: 36px;
   line-height: 51px;
   font-weight: 400;
+  margin-top: -4px;
 }
 
-.about__info-wrapper p {
+.about__text-box {
+  margin-top: -30px;
+  max-height: -webkit-min-content;
+  max-height: -moz-min-content;
+  max-height: min-content;
+  margin-bottom: 14px;
+  overflow: hidden;
+  max-width: 970px;
+}
+
+.all-text .about__text-box {
+  max-height: -webkit-min-content;
+  max-height: -moz-min-content;
+  max-height: min-content;
+}
+
+.about__text-box p {
   font-family: "PTMono-Regular", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.about__rest-text {
+  display: none;
+}
+
+.all-text .about__rest-text {
+  display: block;
 }
 
 .about__button {
@@ -870,6 +983,138 @@ button,
   border-radius: 3px;
   background-color: #f8fdff;
   color: #00b2ff;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.feedback {
+  height: 840px;
+  padding-left: 822px;
+  background-color: #00b2ff;
+  background-image: url("../img/gallery/background/feedback@1x.png");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+
+.feedback__container {
+  margin: 0 auto;
+  width: 500px;
+  height: 610px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 40px;
+  background-color: #00b2ff;
+}
+
+.feedback__container h3 {
+  font-size: 30px;
+  line-height: 42px;
+  font-weight: 400;
+  color: #f2f5f6;
+  margin-top: -30px;
+}
+
+.feedback__container p {
+  font-size: 16px;
+  line-height: 22px;
+  width: 380px;
+  color: #f2f5f6;
+  margin-top: -20px;
+  padding-bottom: 22px;
+}
+
+.feedback__fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.feedback__fieldset input,
+.feedback__fieldset textarea {
+  height: 50px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+  font-family: "PTMono-Regular", "Arial", sans-serif;
+  padding: 15px;
+  font-size: 16px;
+  line-height: 22px;
+  background: rgba(4, 20, 39, 0.15);
+  cursor: pointer;
+}
+
+.feedback__fieldset input:hover,
+.feedback__fieldset textarea:hover {
+  background-color: #c5c4c9;
+}
+
+.feedback__fieldset textarea {
+  height: 155px;
+}
+
+.feedback__fieldset button {
+  font-family: "RobotoCondensed-Bold", "Arial", sans-serif;
+  color: #f2f5f6;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 19px;
+  height: 50px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+  background-color: #041827;
+  letter-spacing: 1px;
+}
+
+.feedback__fieldset button:hover {
+  background-color: #c5c4c9;
+  color: #000000;
+}
+
+.feedback__fieldset input[type="checkbox"] {
+  display: none;
+}
+
+.feedback__fieldset label {
+  font-size: 14px;
+  line-height: 16px;
+  font-family: "PTMono-Regular", "Arial", sans-serif;
+  color: #f2f5f6;
+  padding-left: 23px;
+  cursor: pointer;
+  position: relative;
+}
+
+.feedback__fieldset label::before {
+  position: absolute;
+  content: "";
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  top: 3px;
+  left: 0;
+  background-color: #00b2ff;
+  border: 1px solid #f2f5f6;
+  border-radius: 3px;
+  background-image: url("../img/svg/checkbox.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.feedback__fieldset label:hover::before {
+  background-color: #041827;
+}
+
+.feedback__fieldset label:focus::before {
+  outline: 1px solid #000000;
+}
+
+.feedback__fieldset input[type="checkbox"]:not(:checked) + label::before {
+  background-image: none;
 }
 
 .footer {
@@ -991,7 +1236,8 @@ button,
 
 .footer__navigation-wrapper a,
 .footer__contacts-wrapper a,
-p {
+.footer__navigation-wrapper p,
+.footer__contacts-wrapper p {
   color: #f2f5f6;
   font-family: "PTMono-Regular", "Arial", sans-serif;
   font-size: 16px;
@@ -1103,7 +1349,7 @@ p {
   padding: 15px;
   font-size: 16px;
   line-height: 22px;
-  background-color: #041827;
+  background: rgba(4, 20, 39, 0.15);
   cursor: pointer;
 }
 
@@ -1193,6 +1439,28 @@ p {
   .product__card--manufacture {
     background-image: url("../img/gallery/background/cards/manufacture-desktop@2x.jpg");
   }
+
+  .product__card--mounting {
+    background-image: url("../img/gallery/background/cards/mounting-desktop@2x.jpg");
+  }
+
+  .product__card--accessories {
+    background-image: url("../img/gallery/background/cards/accessories-desktop@2x.jpg");
+  }
+
+  .feedback {
+    background-image: url("../img/gallery/background/feedback@2x.png");
+  }
+}
+
+@media (max-width: 1365px) {
+  .product__list {
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
+  }
 }
 
 @media (max-width: 1023px) {
@@ -1271,6 +1539,41 @@ p {
     margin-top: -20px;
   }
 
+  .advantages__list {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    row-gap: 30px;
+    -webkit-column-gap: 29px;
+    -moz-column-gap: 29px;
+    column-gap: 29px;
+  }
+
+  .advantages__item {
+    padding: 40px;
+  }
+
+  .advantages__item p {
+    height: 190px;
+  }
+
+  .product__container {
+    padding: 60px 50px 75px 50px;
+  }
+
+  .product__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-column-gap: 0;
+    -moz-column-gap: 0;
+    column-gap: 0;
+    row-gap: 0;
+  }
+
   .product__card {
     width: 670px;
     height: 250px;
@@ -1278,6 +1581,14 @@ p {
 
   .product__card--manufacture {
     background-image: url("../img/gallery/background/cards/manufacture-tablet@1x.jpg");
+  }
+
+  .product__card--mounting {
+    background-image: url("../img/gallery/background/cards/mounting-tablet@1x.jpg");
+  }
+
+  .product__card--accessories {
+    background-image: url("../img/gallery/background/cards/accessories-tablet@1x.jpg");
   }
 
   .product__card h3 {
@@ -1288,6 +1599,20 @@ p {
   .product__icon {
     bottom: -70px;
     left: 610px;
+  }
+
+  .about__container {
+    padding-bottom: 80px;
+  }
+
+  .about__info-wrapper {
+    padding-left: 29px;
+  }
+
+  .feedback {
+    height: 580px;
+    min-width: 770px;
+    background-image: none;
   }
 
   .footer__container {
@@ -1344,6 +1669,14 @@ p {
   .product__card--manufacture {
     background-image: url("../img/gallery/background/cards/manufacture-tablet@2x.jpg");
   }
+
+  .product__card--mounting {
+    background-image: url("../img/gallery/background/cards/mounting-tablet@2x.jpg");
+  }
+
+  .product__card--accessories {
+    background-image: url("../img/gallery/background/cards/accessories-tablet@2x.jpg");
+  }
 }
 
 @media (max-width: 769px) {
@@ -1354,6 +1687,14 @@ p {
     grid-template-rows: min-content 1fr min-content;
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
+  }
+
+  .title--big-screen {
+    display: none;
+  }
+
+  .title--mobile {
+    display: block;
   }
 
   .container {
@@ -1408,6 +1749,27 @@ p {
     display: block;
   }
 
+  .advantages__list {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    -ms-grid-columns: 100%;
+    grid-template-columns: 100%;
+  }
+
+  .advantages__item {
+    padding: 30px;
+  }
+
+  .product__container {
+    padding: 50px 25px 86px 25px;
+  }
+
+  .product__container h2 {
+    font-size: 28px;
+    line-height: 39px;
+    width: 250px;
+  }
+
   .product__card {
     width: 270px;
     height: 250px;
@@ -1415,6 +1777,14 @@ p {
 
   .product__card--manufacture {
     background-image: url("../img/gallery/background/cards/manufacture-mobile@1x.jpg");
+  }
+
+  .product__card--mounting {
+    background-image: url("../img/gallery/background/cards/mounting-mobile@1x.jpg");
+  }
+
+  .product__card--accessories {
+    background-image: url("../img/gallery/background/cards/accessories-mobile@1x.jpg");
   }
 
   .product__card h3 {
@@ -1431,6 +1801,34 @@ p {
 
   .about__container img {
     display: none;
+  }
+
+  .about__info-wrapper {
+    padding-left: 0;
+  }
+
+  .about__info-wrapper h2 {
+    font-size: 28px;
+    line-height: 40px;
+  }
+
+  .about__text-box {
+    max-height: 200px;
+  }
+
+  .about__text-box p {
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  .about__button {
+    width: 160px;
+    height: 35px;
+  }
+
+  .feedback {
+    height: 750px;
+    min-width: 320px;
   }
 
   .footer__container {
@@ -1528,7 +1926,8 @@ p {
 
   .footer__navigation-wrapper a,
   .footer__contacts-wrapper a,
-  p {
+  .footer__navigation-wrapper p,
+  .footer__contacts-wrapper p {
     font-size: 14px;
     line-height: 19px;
   }
@@ -1589,5 +1988,13 @@ p {
 
   .product__card--manufacture {
     background-image: url("../img/gallery/background/cards/manufacture-mobile@2x.jpg");
+  }
+
+  .product__card--mounting {
+    background-image: url("../img/gallery/background/cards/mounting-mobile@2x.jpg");
+  }
+
+  .product__card--accessories {
+    background-image: url("../img/gallery/background/cards/accessories-mobile@2x.jpg");
   }
 }

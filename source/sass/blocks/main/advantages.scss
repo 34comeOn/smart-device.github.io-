@@ -1,3 +1,27 @@
+.advantages__list {
+  max-width: 1222px;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  row-gap: 31px;
+  column-gap: 31px;
+  grid-auto-rows: 1fr 1fr;
+
+  @include vp-1023 {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    row-gap: 30px;
+    column-gap: 29px;
+  }
+
+  @include vp-769 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    grid-template-columns: 100%;
+  }
+}
+
 .advantages__item {
   min-width: 270px;
   min-height: 300px;
@@ -9,8 +33,13 @@
   &:hover {
     background-color: $color-blue;
   }
-  &:hover {
-    background-color: $color-blue;
+
+  @include vp-1023 {
+    padding: 40px;
+  }
+
+  @include vp-769 {
+    padding: 30px;
   }
 }
 
@@ -33,8 +62,17 @@
   font-size: 16px;
   line-height: 22px;
   font-family: $ff-placeholder-decorative-regular;
+  color: $color-default-black;
+  height: 120px;
+  overflow: hidden;
+  overflow-y: auto;
+
+  @include vp-1023 {
+    height: 190px;
+  }
 }
 
 .advantages__item:hover p {
   color: $color-font-white;
+  opacity: 1;
 }

@@ -48,3 +48,19 @@
   user-select: none;
   text-transform: uppercase;
 }
+
+.title--big-screen {
+  display: block;
+
+  @include vp-769 {
+    display: none;
+  }
+}
+
+.title--mobile {
+  display: none;
+
+  @include vp-769 {
+    display: block;
+  }
+}
