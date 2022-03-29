@@ -162,7 +162,7 @@
               Товары и услуги Smart Device
             </h2>
             <ul class="product__list list">
-              <li class="product__item">
+              <li class="product__item" id="manufacture">
                 <a class="product__card product__card--manufacture link" href="#" aria-label="Перейти по ссылке">
                   <h3>
                     Производство печатных плат
@@ -173,7 +173,7 @@
                   </svg>
                 </a>
               </li>
-              <li class="product__item">
+              <li class="product__item" id="mounting">
                 <a class="product__card product__card--mounting link" href="#" aria-label="Перейти по ссылке">
                   <h3>
                     Монтаж печатных плат
@@ -184,7 +184,7 @@
                   </svg>
                 </a>
               </li>
-              <li class="product__item">
+              <li class="product__item" id="accessories">
                 <a class="product__card product__card--accessories link" href="#" aria-label="Перейти по ссылке">
                   <h3>
                     Комплектующие для светотехники
@@ -207,16 +207,16 @@
             <p>
               Мы проконсультируем Вас бесплатно
             </p>
-            <form class="popup__form" action="https://echo.htmlacademy.ru" method="post">
-              <fieldset class="popup__fieldset">
-                <input type="text" name="name" aria-label="Ввести свое имя" placeholder="Имя" autofocus>
-                <input type="number" name="phone" aria-label="Ввести номер телефона" placeholder="Телефон">
+            <form class="feedback__form" action="https://echo.htmlacademy.ru" method="post">
+              <fieldset class="feedback__fieldset">
+                <input type="text" name="name" aria-label="Ввести свое имя" placeholder="Имя" required>
+                <input class="phone-input" type="text" name="phone" aria-label="Ввести номер телефона" placeholder="Телефон" required>
                 <textarea name="" id="" cols="30" rows="10" name="user-question" aria-label="Напишите" placeholder="Ваш вопрос"></textarea>
                 <button type="submit" aria-label="Отправить форму">
                   Задать вопрос
                 </button>
-                <input type="checkbox" id="popup-checkbox" name="agreement" aria-label="поставить флажок о согласии" checked>
-                <label for="popup-checkbox" tabindex="0">
+                <input type="checkbox" id="feedback-checkbox" name="agreement" aria-label="поставить флажок о согласии" checked required>
+                <label class="checkbox-label" for="feedback-checkbox" tabindex="0">
                   Я согласен на обработку  персональных данных
                 </label>
               </fieldset>
@@ -274,27 +274,27 @@
               </div>
               <ul class="footer__navigation-list list">
                 <li class="footer__navigation-item">
-                  <a href="#" aria-label="перейти в раздел">
+                  <a href="#about" aria-label="перейти в раздел">
                     О Компаниии
                   </a>
                 </li>
                 <li class="footer__navigation-item">
-                  <a href="#" aria-label="перейти в раздел">
+                  <a href="#product" aria-label="перейти в раздел">
                     Продукты
                   </a>
                 </li>
                 <li class="footer__navigation-item">
-                  <a href="#" aria-label="перейти в раздел">
+                  <a href="#manufacture" aria-label="перейти в раздел">
                     Протзводство печатных плат
                   </a>
                 </li>
                 <li class="footer__navigation-item">
-                  <a href="#" aria-label="перейти в раздел">
+                  <a href="#mounting" aria-label="перейти в раздел">
                     Монтаж печатных плат
                   </a>
                 </li>
                 <li class="footer__navigation-item">
-                  <a href="#" aria-label="перейти в раздел">
+                  <a href="#accessories" aria-label="перейти в раздел">
                     Комплектующие
                   </a>
                 </li>
@@ -343,7 +343,7 @@
         </div>
       </footer>
 
-      <div class="popup visually-hidden">
+      <div class="popup">
         <div class="popup__container">
           <button class="popup__close-button button">
           </button>
@@ -355,14 +355,14 @@
           </p>
           <form class="popup__form" action="https://echo.htmlacademy.ru" method="post">
             <fieldset class="popup__fieldset">
-              <input type="text" name="name" aria-label="Ввести свое имя" placeholder="Имя" autofocus>
-              <input type="number" name="phone" aria-label="Ввести номер телефона" placeholder="Телефон">
+              <input type="text" name="name" aria-label="Ввести свое имя" placeholder="Имя" autofocus required>
+              <input class="phone-input" type="text" name="phone" aria-label="Ввести номер телефона" placeholder="Телефон" required>
               <textarea cols="30" rows="10" name="user-question" aria-label="Напишите" placeholder="Ваш вопрос"></textarea>
-              <button type="submit" aria-label="Отправить форму">
+              <button class="popup__button" type="submit" aria-label="Отправить форму">
                 Отправить
               </button>
-              <input type="checkbox" id="popup-checkbox" name="agreement" aria-label="поставить флажок о согласии" checked>
-              <label for="popup-checkbox" tabindex="0">
+              <input type="checkbox" id="popup-checkbox" name="agreement" aria-label="поставить флажок о согласии" checked required>
+              <label class="checkbox-label" for="popup-checkbox" tabindex="0">
                 Я согласен на обработку  персональных данных
               </label>
             </fieldset>
@@ -370,6 +370,7 @@
         </div>
       </div>
     </div>
+
     <script src="js/vendor.min.js"></script>
     <script src="js/main.min.js"></script>
   </body>

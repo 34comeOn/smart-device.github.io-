@@ -64,3 +64,21 @@
     display: block;
   }
 }
+
+.popup-opened {
+  height: 100vh;
+  overflow: hidden;
+
+  &::before {
+    background: $color-menu-opened;
+    opacity: 0.4;
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+  }
+}

@@ -1,48 +1,68 @@
-// const mainWrapperElement = document.querySelector('.wrapper');
-// const navToggleElement = document.querySelector('.header__toggle');
-// const headerMenuElement = document.querySelector('.navigation__list--header');
-// const nameInputElement = document.querySelector('.name-input');
-// const phoneInputElement = document.querySelector('.phone-input');
-// const emailInputElement = document.querySelector('.email-input');
-// const formSubmitElement = document.querySelector('.booking__button');
-// const checkboxElement = document.querySelector('.booking__checkbox');
-// const labelElement = document.querySelector('.booking__label');
+import IMask from 'imask';
 
-// mainWrapperElement.classList.remove('wrapper--nojs');
+const mainWrapperElement = document.querySelector('.wrapper');
+const popupElement = document.querySelector('.popup');
+const popupOpenElement = document.querySelector('.header__button-link');
+const popupCloseButtonElement = popupElement.querySelector('.popup__close-button');
+const footerElement = document.querySelector('.footer__container');
+const popupSubmitElement = popupElement.querySelector('.popup__button');
+const collectionOfNameInputElements = document.querySelectorAll('input[name="name"]');
+const collectionOfPhoneInputElements = document.querySelectorAll('input[name="phone"]');
+const collectionOfCheckboxElements = document.querySelectorAll('input[type="checkbox"]');
+const collectionOfLabelElements = document.querySelectorAll('label');
 
-// const closeMenu = () => {
-//   document.body.classList.remove('menu-opened');
-//   mainWrapperElement.classList.add('wrapper--menu-closed');
-//   mainWrapperElement.classList.remove('wrapper--menu-opened');
-// };
 
-// navToggleElement.addEventListener('click', function () {
-//   if (mainWrapperElement.classList.contains('wrapper--menu-closed')) {
-//     mainWrapperElement.classList.remove('wrapper--menu-closed');
-//     mainWrapperElement.classList.add('wrapper--menu-opened');
-//     document.body.classList.add('menu-opened');
-//   } else {
-//     mainWrapperElement.classList.add('wrapper--menu-closed');
-//     mainWrapperElement.classList.remove('wrapper--menu-opened');
-//     document.body.classList.remove('menu-opened');
-//   }
-// });
+mainWrapperElement.classList.remove('wrapper--nojs');
+footerElement.classList.remove('navigation--opened');
+footerElement.classList.remove('contacts--opened');
 
-// headerMenuElement.addEventListener('click', function (evt) {
-//   if (evt.target.nodeName === 'A' && mainWrapperElement.classList.contains('wrapper--menu-opened')) {
-//     closeMenu();
-//   }
-// });
+const closePopup = () => {
+  document.body.classList.remove('popup-opened');
+  mainWrapperElement.classList.remove('popup--opened');
+};
 
-// document.addEventListener('click', function (evt) {
-//   if (!evt.target.closest('.header__container') && mainWrapperElement.classList.contains('wrapper--menu-opened')) {
-//     closeMenu();
-//   }
-// });
+popupOpenElement.addEventListener('click', function () {
+  mainWrapperElement.classList.add('popup--opened');
+  document.body.classList.add('popup-opened');
 
-// const nameInputRe = /[A-Za-zA-Яа-яЁё0-9\s]$/;
-// const phoneInputRe = /[0-9]$/;
-// const emailInputRe = /\S+@\S+\.\S+/;
+  popupCloseButtonElement.addEventListener('click', function () {
+    closePopup();
+  });
+
+  document.addEventListener('click', function (evt) {
+    if (!evt.target.closest('.popup__container') && !evt.target.classList.contains('header__button-link') && mainWrapperElement.classList.contains('popup--opened')) {
+      closePopup();
+    }
+  });
+
+  popupSubmitElement.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    closePopup();
+  });
+});
+
+const setEditClickHandler = (element) => {
+  element.addEventListener('input', () => {
+    const maskOptions = {
+      mask: '+{7}(000)000-00-00',
+    };
+
+    IMask(element, maskOptions);
+  });
+};
+
+for (let phoneInput of collectionOfPhoneInputElements) {
+  setEditClickHandler(phoneInput);
+}
+
+
+const nameInputRe = /[A-Za-zA-Яа-яЁё0-9\s]$/;
+const phoneInputRe = /[0-9]$/;
+const emailInputRe = /\S+@\S+\.\S+/;
+
+const validateForms = () => {
+
+}
 
 // const validateInput = (element, re, text) => {
 //   element.addEventListener('input', () => {
