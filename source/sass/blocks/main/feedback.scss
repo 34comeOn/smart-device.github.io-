@@ -74,6 +74,8 @@
 
   @include retina {
     &::before {
+      background-size: cover;
+      background-repeat: no-repeat;
       background-image: url("../img/gallery/airplane@2x.png");
     }
   }
@@ -141,7 +143,16 @@
   cursor: pointer;
 
   &:hover {
-    background-color: $color-card-background;
+    background-color: $color-very-dark;
+  }
+
+  &:focus {
+    background-color: $color-card-focus;
+    color: $color-font-white;
+  }
+
+  &::placeholder{
+    user-select: none;
   }
 }
 
@@ -164,10 +175,21 @@
   border-radius: 3px;
   background-color: $color-very-dark;
   letter-spacing: 1px;
+  cursor: pointer;
+  user-select: none;
 
   &:hover {
     background-color: $color-card-background;
     color: $color-default-black;
+  }
+
+  &:focus {
+    background-color: $color-card-focus;
+    color: $color-default-black;
+  }
+
+  &:disabled {
+    opacity: 0.3;
   }
 
   @include vp-769 {
@@ -186,6 +208,7 @@
   color: $color-font-white;
   padding-left: 23px;
   cursor: pointer;
+  user-select: none;
   position: relative;
 
   &::before {
@@ -213,6 +236,7 @@
   &:focus {
     &::before {
       outline: 1px solid $color-default-black;
+      background-color: $color-card-focus;
     }
   }
 }

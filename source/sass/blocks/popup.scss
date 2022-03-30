@@ -12,8 +12,10 @@
 
 .popup__container {
   margin: 0 auto;
-  width: 500px;
-  height: 610px;
+  max-width: 500px;
+  width: 100%;
+  min-width: 270px;
+  min-height: 610px;
   box-sizing: border-box;
   padding: 40px;
   background-color: $color-blue;
@@ -27,6 +29,7 @@
   height: 30px;
   border: none;
   background-color: $color-transparent;
+  user-select: none;
 
   &::before,
   &::after {
@@ -107,9 +110,19 @@
   border-radius: 3px;
   background-color: $color-very-dark;
   letter-spacing: 1px;
+  cursor: pointer;
 
   &:hover {
     background-color: $color-card-background;
+    color: $color-default-black;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+  }
+
+  &:focus {
+    background-color: $color-card-focus;
     color: $color-default-black;
   }
 }

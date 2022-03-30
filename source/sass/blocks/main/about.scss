@@ -87,9 +87,25 @@
   color: $color-blue;
   font-size: 14px;
   line-height: 16px;
+  user-select: none;
 
   @include vp-769 {
     width: 160px;
     height: 35px;
+    margin-bottom: 42px;
   }
+
+  &:hover {
+    background-color: $color-card-background;
+    color: $color-default-black;
+  }
+
+  &:focus {
+    background-color: $color-card-focus;
+    color: $color-default-black;
+  }
+}
+
+.wrapper--nojs .about__button {
+  display: none;
 }

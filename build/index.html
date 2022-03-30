@@ -52,10 +52,10 @@
             <p>
               производство и монтаж, поставка комплектующих, блоков и модулей
             </p>
-            <a class="intro__button intro__button--wide button" href="#" aria-label="Нажать чтобы">
+            <a class="intro__button intro__button--wide button" href="#feedback" aria-label="Нажать чтобы">
               Получить бесплатную консультацию
             </a>
-            <a class="intro__button intro__button--short button" href="#" aria-label="Нажать тем, кому нужна">
+            <a class="intro__button intro__button--short button" href="#feedback" aria-label="Нажать тем, кому нужна">
               бесплатная консультация
             </a>
           </div>
@@ -67,7 +67,7 @@
           </h2>
           <div class="advantages__container container">
             <ul class="advantages__list list">
-              <li class="advantages__item">
+              <li class="advantages__item" tabindex="0">
                 <div class="advantages__icon-wrapper">
                   <svg class="advantages__icon" width="35" height="35" fill="#00b2ff">
                     <use xlink:href="img/sprite/sprite.svg#icon-clock">
@@ -77,11 +77,11 @@
                 <h3>
                   Оперативные сроки
                 </h3>
-                <p>
+                <p tabindex="0">
                   Усовершенствованная логистическая система позволяет нам просчитывать стоимость, производить и доставлять заказы плат и комплектующих в самые короткие сроки
                 </p>
               </li>
-              <li class="advantages__item">
+              <li class="advantages__item" tabindex="0">
                 <div class="advantages__icon-wrapper">
                   <svg class="advantages__icon" width="35" height="35" fill="#00b2ff">
                     <use xlink:href="img/sprite/sprite.svg#icon-suppliers">
@@ -91,11 +91,11 @@
                 <h3>
                   Крупные поставщики
                 </h3>
-                <p>
+                <p tabindex="0">
                   Нашими поставщиками являются такие крупные мировые компании как: OSRAM, CREE, HOLGLITRONIC, REFOND. Сотрудничество с такими компаниями обеспичивает хорошее качество нашей продукции.
                 </p>
               </li>
-              <li class="advantages__item">
+              <li class="advantages__item" tabindex="0">
                 <div class="advantages__icon-wrapper">
                   <svg class="advantages__icon" width="35" height="35" fill="#00b2ff">
                     <use xlink:href="img/sprite/sprite.svg#icon-detective">
@@ -105,11 +105,11 @@
                 <h3>
                   Полная конфиденциальность
                 </h3>
-                <p>
+                <p tabindex="0">
                   По желанию клиента мы обеспечиваем полную конфеденциальность.
                 </p>
               </li>
-              <li class="advantages__item">
+              <li class="advantages__item" tabindex="0">
                 <div class="advantages__icon-wrapper">
                   <svg class="advantages__icon" width="35" height="35" fill="#00b2ff">
                     <use xlink:href="img/sprite/sprite.svg#icon-tag">
@@ -119,7 +119,7 @@
                 <h3>
                   Персонализация стоимости
                 </h3>
-                <p>
+                <p tabindex="0">
                   Мы  подбираем определенную фабрику, поставщиков, вид доставки, чтобы установить ту цену, которая Вас устраивает.
                 </p>
               </li>
@@ -130,7 +130,7 @@
         <section class="about" id="about">
           <div class="about__container container">
             <img loading="lazy" width="150" height="320" src="img/gallery/about-pic@1x.png" srcset="img/gallery/about-pic@1x.webp 1x, img/gallery/about-pic@2x.webp 2x" alt="#">
-            <div class="about__info-wrapper">
+            <div class="about__info-wrapper all-text">
               <h2>
                 О компании
               </h2>
@@ -146,7 +146,7 @@
                   Мы&nbsp;стремимся к&nbsp;постоянному развитию и&nbsp;повышению уровня качества продукции, производимой внутри компании. Использование инновационных технологий помогает экономить деньги и&nbsp;время наших клиентов.
                 </p>
               </div>
-              <button class="about__button button">
+              <button class="about__button about__button--more-info button">
                 Подробнее
               </button>
             </div>
@@ -211,12 +211,12 @@
               <fieldset class="feedback__fieldset">
                 <input type="text" name="name" aria-label="Ввести свое имя" placeholder="Имя" required>
                 <input class="phone-input" type="text" name="phone" aria-label="Ввести номер телефона" placeholder="Телефон" required>
-                <textarea name="" id="" cols="30" rows="10" name="user-question" aria-label="Напишите" placeholder="Ваш вопрос"></textarea>
-                <button type="submit" aria-label="Отправить форму">
+                <textarea cols="30" rows="10" name="user-question" aria-label="Напишите" placeholder="Ваш вопрос"></textarea>
+                <button class="form__button" type="submit" aria-label="Отправить форму">
                   Задать вопрос
                 </button>
-                <input type="checkbox" id="feedback-checkbox" name="agreement" aria-label="поставить флажок о согласии" checked required>
-                <label class="checkbox-label" for="feedback-checkbox" tabindex="0">
+                <input class="form__checkbox" type="checkbox" id="feedback-checkbox" name="agreement" aria-label="поставить флажок о согласии" checked>
+                <label class="checkbox-label checkbox-label--checked" for="feedback-checkbox" tabindex="0">
                   Я согласен на обработку  персональных данных
                 </label>
               </fieldset>
@@ -355,14 +355,14 @@
           </p>
           <form class="popup__form" action="https://echo.htmlacademy.ru" method="post">
             <fieldset class="popup__fieldset">
-              <input type="text" name="name" aria-label="Ввести свое имя" placeholder="Имя" autofocus required>
+              <input type="text" id="popup__close" name="name" aria-label="Ввести свое имя" placeholder="Имя" required>
               <input class="phone-input" type="text" name="phone" aria-label="Ввести номер телефона" placeholder="Телефон" required>
               <textarea cols="30" rows="10" name="user-question" aria-label="Напишите" placeholder="Ваш вопрос"></textarea>
-              <button class="popup__button" type="submit" aria-label="Отправить форму">
+              <button class="popup__button form__button" type="submit" aria-label="Отправить форму">
                 Отправить
               </button>
-              <input type="checkbox" id="popup-checkbox" name="agreement" aria-label="поставить флажок о согласии" checked required>
-              <label class="checkbox-label" for="popup-checkbox" tabindex="0">
+              <input class="form__checkbox" type="checkbox" id="popup-checkbox" name="agreement" aria-label="поставить флажок о согласии" checked>
+              <label class="checkbox-label checkbox-label--checked" for="popup-checkbox" tabindex="0">
                 Я согласен на обработку  персональных данных
               </label>
             </fieldset>

@@ -34,6 +34,10 @@
     background-color: $color-blue;
   }
 
+  &:focus {
+    background-color: $color-card-focus;
+  }
+
   @include vp-1023 {
     padding: 40px;
   }
@@ -43,7 +47,8 @@
   }
 }
 
-.advantages__item:hover .advantages__icon {
+.advantages__item:hover .advantages__icon,
+.advantages__item:focus .advantages__icon {
   fill: $color-font-white;
 }
 
@@ -67,7 +72,8 @@
   }
 }
 
-.advantages__item:hover h3 {
+.advantages__item:hover h3,
+.advantages__item:focus h3 {
   color: $color-font-white;
 }
 
@@ -92,7 +98,13 @@
   }
 }
 
-.advantages__item:hover p {
+.advantages__item:hover p,
+.advantages__item:focus p {
   color: $color-font-white;
   opacity: 1;
+}
+
+.advantages__item p:focus {
+  background-color: $color-card-focus;
+  color: $color-font-white;
 }

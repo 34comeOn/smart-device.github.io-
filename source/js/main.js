@@ -2,44 +2,40 @@ import IMask from 'imask';
 
 const mainWrapperElement = document.querySelector('.wrapper');
 const popupElement = document.querySelector('.popup');
-const popupOpenElement = document.querySelector('.header__button-link');
+const popupOpenButtonElement = document.querySelector('.header__button-link');
 const popupCloseButtonElement = popupElement.querySelector('.popup__close-button');
-const footerElement = document.querySelector('.footer__container');
-const popupSubmitElement = popupElement.querySelector('.popup__button');
-const collectionOfNameInputElements = document.querySelectorAll('input[name="name"]');
-const collectionOfPhoneInputElements = document.querySelectorAll('input[name="phone"]');
-const collectionOfCheckboxElements = document.querySelectorAll('input[type="checkbox"]');
-const collectionOfLabelElements = document.querySelectorAll('label');
-
+const footerContainerElement = document.querySelector('.footer__container');
+// const popupSubmitElement = popupElement.querySelector('.popup__button');
+const feedbackFormElement = document.querySelector('.feedback__form');
+const aboutWrapperElement = document.querySelector('.about__info-wrapper');
+const aboutButtonElement = document.querySelector('.about__button');
+const navigationToggleElement = document.querySelector('.footer__toggle-nav');
+const contactsToggleElement = document.querySelector('.footer__toggle-contacts');
 
 mainWrapperElement.classList.remove('wrapper--nojs');
-footerElement.classList.remove('navigation--opened');
-footerElement.classList.remove('contacts--opened');
+aboutWrapperElement.classList.remove('all-text');
+footerContainerElement.classList.remove('navigation--opened');
+footerContainerElement.classList.remove('contacts--opened');
+
+const isEscapeKey = (evt) => (
+  evt.key === 'Escape'
+);
 
 const closePopup = () => {
   document.body.classList.remove('popup-opened');
   mainWrapperElement.classList.remove('popup--opened');
 };
 
-popupOpenElement.addEventListener('click', function () {
-  mainWrapperElement.classList.add('popup--opened');
-  document.body.classList.add('popup-opened');
-
-  popupCloseButtonElement.addEventListener('click', function () {
+const onPopupEscKeydown = (evtClose) => {
+  if (isEscapeKey(evtClose)) {
+    evtClose.preventDefault();
     closePopup();
-  });
+  }
+};
 
-  document.addEventListener('click', function (evt) {
-    if (!evt.target.closest('.popup__container') && !evt.target.classList.contains('header__button-link') && mainWrapperElement.classList.contains('popup--opened')) {
-      closePopup();
-    }
-  });
-
-  popupSubmitElement.addEventListener('click', function (evt) {
-    evt.preventDefault();
-    closePopup();
-  });
-});
+const removeEscListener = () => {
+  document.removeEventListener('keydown', onPopupEscKeydown);
+};
 
 const setEditClickHandler = (element) => {
   element.addEventListener('input', () => {
@@ -51,73 +47,131 @@ const setEditClickHandler = (element) => {
   });
 };
 
-for (let phoneInput of collectionOfPhoneInputElements) {
-  setEditClickHandler(phoneInput);
-}
-
+const isEnterKey = (evt) => (
+  evt.key === 'Enter'
+);
 
 const nameInputRe = /[A-Za-zA-Яа-яЁё0-9\s]$/;
 const phoneInputRe = /[0-9]$/;
-const emailInputRe = /\S+@\S+\.\S+/;
 
-const validateForms = () => {
+const validateInput = (element, re, text) => {
+  element.addEventListener('input', () => {
+    const nameInputArray = element.value.split(' ');
 
-}
+    if (element.value.endsWith(' ')) {
+      nameInputArray.pop();
+    }
 
-// const validateInput = (element, re, text) => {
-//   element.addEventListener('input', () => {
-//     const nameInputArray = element.value.split(' ');
+    const booleanNameInputArray = nameInputArray.map((nameValidity) =>
+      re.test(nameValidity)
+    );
 
-//     if (element.value.endsWith(' ')) {
-//       nameInputArray.pop();
-//     }
+    nameInputArray.forEach((word) => {
 
-//     const booleanNameInputArray = nameInputArray.map((nameValidity) =>
-//       re.test(nameValidity)
-//     );
+      if (!re.test(word) || booleanNameInputArray.includes(false)) {
+        element.setCustomValidity(text);
+      } else {
+        element.setCustomValidity('');
+      }
+      element.reportValidity();
+    });
+  });
+};
 
-//     nameInputArray.forEach((word) => {
+const validateForm = (form) => {
+  const nameInputElement = form.querySelector('input[name="name"]');
+  const phoneInputElement = form.querySelector('input[name="phone"]');
+  const labelFormElement = form.querySelector('.checkbox-label');
+  const buttonFormElement = form.querySelector('.form__button');
 
-//       if (!re.test(word) || booleanNameInputArray.includes(false)) {
-//         element.setCustomValidity(text);
-//       } else {
-//         element.setCustomValidity('');
-//       }
-//       element.reportValidity();
-//     });
-//   });
-// };
+  const onLabelClick = (label, submitButton) => {
+    if (!label.classList.contains('checkbox-label--checked')) {
+      label.classList.add('checkbox-label--checked');
+      submitButton.removeAttribute('disabled');
+    } else {
+      label.classList.remove('checkbox-label--checked');
+      submitButton.setAttribute('disabled', 'disabled');
+    }
+  };
 
-// const onLabelClick = () => {
-//   if (!checkboxElement.classList.contains('booking__label--checked')) {
-//     checkboxElement.classList.add('booking__label--checked');
-//     formSubmitElement.setAttribute('disabled', 'disabled');
-//   } else {
-//     checkboxElement.classList.remove('booking__label--checked');
-//     formSubmitElement.removeAttribute('disabled');
-//   }
-// };
+  const pushLabel = (someLabel, buttonToDisable) => {
+    onLabelClick(someLabel, buttonToDisable);
+  };
+  const onLabelEnterKeydown = (evtClose) => {
+    if (isEnterKey(evtClose)) {
+      pushLabel(labelFormElement, buttonFormElement);
+    }
+  };
 
-// labelElement.addEventListener('click', function () {
-//   onLabelClick();
-// });
+  labelFormElement.addEventListener('click', function () {
+    onLabelClick(labelFormElement, buttonFormElement);
+  });
 
-// validateInput(nameInputElement, nameInputRe, 'Здесь могут быть только буквы и цифры');
-// validateInput(phoneInputElement, phoneInputRe, 'Здесь могут быть только цифры');
-// validateInput(emailInputElement, emailInputRe, 'Впишите пожалуйста электронный адрес корректно');
+  labelFormElement.addEventListener('keydown', onLabelEnterKeydown);
 
-// const isEnterKey = (evt) => (
-//   evt.key === 'Enter'
-// );
+  validateInput(nameInputElement, nameInputRe, 'Здесь могут быть только буквы и цифры');
+  validateInput(phoneInputElement, phoneInputRe, 'Здесь могут быть только цифры');
 
-// const pushLabel = () => {
-//   onLabelClick();
-// };
+  setEditClickHandler(phoneInputElement);
+};
 
-// const onLabelEnterKeydown = (evtClose) => {
-//   if (isEnterKey(evtClose)) {
-//     pushLabel();
-//   }
-// };
+validateForm(feedbackFormElement);
 
-// labelElement.addEventListener('keydown', onLabelEnterKeydown);
+popupOpenButtonElement.addEventListener('click', function () {
+  const popupNameInputElement = popupElement.querySelector('#popup__close');
+  popupNameInputElement.focus();
+
+  const popupFormElement = popupElement.querySelector('.popup__form');
+  validateForm(popupFormElement);
+
+
+  document.addEventListener('keydown', onPopupEscKeydown);
+
+  mainWrapperElement.classList.add('popup--opened');
+  document.body.classList.add('popup-opened');
+
+  popupCloseButtonElement.addEventListener('click', function () {
+    closePopup();
+    removeEscListener();
+  });
+
+  document.addEventListener('click', function (evt) {
+    if (!evt.target.closest('.popup__container') && !evt.target.classList.contains('header__button-link') && mainWrapperElement.classList.contains('popup--opened')) {
+      closePopup();
+      removeEscListener();
+    }
+  });
+
+  // popupSubmitElement.addEventListener('click', function (evt) {
+  //   // evt.preventDefault();
+  //   closePopup();
+  // });
+});
+
+aboutButtonElement.addEventListener('click', function () {
+  aboutWrapperElement.classList.toggle('all-text');
+
+  if (aboutButtonElement.classList.contains('about__button--more-info')) {
+    aboutButtonElement.classList.toggle('about__button--more-info');
+    aboutButtonElement.textContent = 'Свернуть';
+  } else {
+    aboutButtonElement.classList.toggle('about__button--more-info');
+    aboutButtonElement.textContent = 'Подробнее';
+  }
+});
+
+const toggleTabs = (footerContainer, hiddingElement, togglingElement) => {
+  if (footerContainer.classList.contains(`${hiddingElement}--opened`)) {
+    footerContainer.classList.remove(`${hiddingElement}--opened`);
+  }
+
+  footerContainer.classList.toggle(`${togglingElement}--opened`);
+};
+
+navigationToggleElement.addEventListener('click', function () {
+  toggleTabs(footerContainerElement, 'contacts', 'navigation');
+});
+
+contactsToggleElement.addEventListener('click', function () {
+  toggleTabs(footerContainerElement, 'navigation', 'contacts');
+});

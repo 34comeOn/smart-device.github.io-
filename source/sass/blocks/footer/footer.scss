@@ -76,6 +76,14 @@
   margin-right: 20px;
 }
 
+.footer__sochials-pic:hover {
+  fill: $color-blue;
+}
+
+.footer__sochials-link:focus .footer__sochials-pic {
+  fill: $color-card-focus;
+}
+
 .footer__link-logo {
   padding-bottom: 20px;
 
@@ -205,6 +213,16 @@
   }
 }
 
+.footer__navigation-wrapper a:hover,
+.footer__contacts-wrapper a:hover {
+  color: $color-blue;
+}
+
+.footer__navigation-wrapper a:focus,
+.footer__contacts-wrapper a:focus {
+  color: $color-card-focus;
+}
+
 .footer__button-box {
   display: flex;
   justify-content: space-between;
@@ -214,17 +232,20 @@
   display: none;
 
   @include vp-769 {
+    width: 100%;
+    position: absolute;
+    left: 0px;
     display: block;
-    width: 15px;
-    height: 15px;
+    height: 30px;
     border: none;
     background-color: $color-transparent;
     cursor: pointer;
+    user-select: none;
 
     &::before {
       position: absolute;
       content: "";
-      top: 26px;
+      top: 11px;
       right:0;
       width: 15px;
       height: 1px;
@@ -243,7 +264,7 @@
       position: absolute;
       content: "";
       right: 7px;
-      top: 19px;
+      top: 4px;
       width: 1px;
       height: 15px;
       background-color: $color-font-white;
@@ -258,7 +279,7 @@
       position: absolute;
       content: "";
       right: 7px;
-      top: 19px;
+      top: 4px;
       width: 1px;
       height: 15px;
       background-color: $color-font-white;
@@ -279,5 +300,26 @@
     &::after {
       display: none;
     }
+  }
+}
+
+.footer__toggle:hover {
+  background-color: $color-input-background;
+
+  &::after {
+    background-color: $color-blue;
+  }
+
+  &::before {
+    background-color: $color-blue;
+  }
+}
+
+.footer__toggle:focus {
+  background-color: $color-card-focus;
+  opacity: 0.3;
+  &::after,
+  &::before {
+    background-color: $color-font-white;
   }
 }

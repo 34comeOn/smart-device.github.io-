@@ -104,6 +104,16 @@
     line-height: 16px;
     margin-left: 0;
   }
+
+  &:hover {
+    background-color: $color-card-background;
+    color: $color-default-black;
+  }
+
+  &:focus {
+    background-color: $color-card-focus;
+    color: $color-default-black;
+  }
 }
 
 .intro__button--wide {

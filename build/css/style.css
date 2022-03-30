@@ -674,6 +674,7 @@ button,
 
 .header__link {
   pointer-events: none;
+  padding-top: 30px;
 }
 
 .header__logo {
@@ -694,6 +695,7 @@ button,
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  padding-top: 45px;
 }
 
 .header__item a {
@@ -727,6 +729,18 @@ button,
   background-position: center;
 }
 
+.header__item--email a:hover {
+  -webkit-box-shadow: 0 0 15px 8px #00b2ff;
+  box-shadow: 0 0 15px 8px #00b2ff;
+  border-radius: 5px;
+}
+
+.header__item--email a:focus {
+  -webkit-box-shadow: 0 0 15px 8px #8e5c39;
+  box-shadow: 0 0 15px 8px #8e5c39;
+  border-radius: 5px;
+}
+
 .header__item--phone a {
   position: relative;
 }
@@ -745,6 +759,18 @@ button,
   background-position: center;
 }
 
+.header__item--phone a:hover {
+  -webkit-box-shadow: 0 0 15px 8px #00b2ff;
+  box-shadow: 0 0 15px 8px #00b2ff;
+  border-radius: 5px;
+}
+
+.header__item--phone a:focus {
+  -webkit-box-shadow: 0 0 15px 8px #8e5c39;
+  box-shadow: 0 0 15px 8px #8e5c39;
+  border-radius: 5px;
+}
+
 .header__button-link {
   font-size: 14px;
   line-height: 17px;
@@ -755,6 +781,18 @@ button,
   width: 160px;
   height: 40px;
   padding-top: 9px;
+}
+
+.header__button-link:hover {
+  -webkit-box-shadow: 0 0 15px 8px #00b2ff;
+  box-shadow: 0 0 15px 8px #00b2ff;
+  border-radius: 5px;
+}
+
+.header__button-link:focus {
+  -webkit-box-shadow: 0 0 15px 8px #8e5c39;
+  box-shadow: 0 0 15px 8px #8e5c39;
+  border-radius: 5px;
 }
 
 .intro {
@@ -800,6 +838,16 @@ button,
   letter-spacing: 1px;
 }
 
+.intro__button:hover {
+  background-color: #c5c4c9;
+  color: #000000;
+}
+
+.intro__button:focus {
+  background-color: #8e5c39;
+  color: #000000;
+}
+
 .intro__button--short {
   display: none;
 }
@@ -833,7 +881,12 @@ button,
   background-color: #00b2ff;
 }
 
-.advantages__item:hover .advantages__icon {
+.advantages__item:focus {
+  background-color: #8e5c39;
+}
+
+.advantages__item:hover .advantages__icon,
+.advantages__item:focus .advantages__icon {
   fill: #f2f5f6;
 }
 
@@ -844,7 +897,8 @@ button,
   color: #00b2ff;
 }
 
-.advantages__item:hover h3 {
+.advantages__item:hover h3,
+.advantages__item:focus h3 {
   color: #f2f5f6;
 }
 
@@ -858,9 +912,15 @@ button,
   overflow-y: auto;
 }
 
-.advantages__item:hover p {
+.advantages__item:hover p,
+.advantages__item:focus p {
   color: #f2f5f6;
   opacity: 1;
+}
+
+.advantages__item p:focus {
+  background-color: #8e5c39;
+  color: #f2f5f6;
 }
 
 .product {
@@ -1004,6 +1064,24 @@ button,
   color: #00b2ff;
   font-size: 14px;
   line-height: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.about__button:hover {
+  background-color: #c5c4c9;
+  color: #000000;
+}
+
+.about__button:focus {
+  background-color: #8e5c39;
+  color: #000000;
+}
+
+.wrapper--nojs .about__button {
+  display: none;
 }
 
 .feedback {
@@ -1094,7 +1172,45 @@ button,
 
 .feedback__fieldset input:hover,
 .feedback__fieldset textarea:hover {
-  background-color: #c5c4c9;
+  background-color: #041827;
+}
+
+.feedback__fieldset input:focus,
+.feedback__fieldset textarea:focus {
+  background-color: #8e5c39;
+  color: #f2f5f6;
+}
+
+.feedback__fieldset input::-webkit-input-placeholder,
+.feedback__fieldset textarea::-webkit-input-placeholder {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.feedback__fieldset input::-moz-placeholder,
+.feedback__fieldset textarea::-moz-placeholder {
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.feedback__fieldset input:-ms-input-placeholder,
+.feedback__fieldset textarea:-ms-input-placeholder {
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.feedback__fieldset input::-ms-input-placeholder,
+.feedback__fieldset textarea::-ms-input-placeholder {
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.feedback__fieldset input::placeholder,
+.feedback__fieldset textarea::placeholder {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .feedback__fieldset textarea {
@@ -1120,11 +1236,25 @@ button,
   border-radius: 3px;
   background-color: #041827;
   letter-spacing: 1px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .feedback__fieldset button:hover {
   background-color: #c5c4c9;
   color: #000000;
+}
+
+.feedback__fieldset button:focus {
+  background-color: #8e5c39;
+  color: #000000;
+}
+
+.feedback__fieldset button:disabled {
+  opacity: 0.3;
 }
 
 .feedback__fieldset input[type="checkbox"] {
@@ -1138,6 +1268,10 @@ button,
   color: #f2f5f6;
   padding-left: 23px;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   position: relative;
 }
 
@@ -1163,6 +1297,7 @@ button,
 
 .feedback__fieldset label:focus::before {
   outline: 1px solid #000000;
+  background-color: #8e5c39;
 }
 
 .feedback__fieldset input[type="checkbox"]:not(:checked) + label::before {
@@ -1228,6 +1363,14 @@ button,
 
 .footer__sochials-item {
   margin-right: 20px;
+}
+
+.footer__sochials-pic:hover {
+  fill: #00b2ff;
+}
+
+.footer__sochials-link:focus .footer__sochials-pic {
+  fill: #8e5c39;
 }
 
 .footer__link-logo {
@@ -1298,6 +1441,16 @@ button,
   opacity: 0.7;
 }
 
+.footer__navigation-wrapper a:hover,
+.footer__contacts-wrapper a:hover {
+  color: #00b2ff;
+}
+
+.footer__navigation-wrapper a:focus,
+.footer__contacts-wrapper a:focus {
+  color: #8e5c39;
+}
+
 .footer__button-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1315,6 +1468,28 @@ button,
   display: none;
 }
 
+.footer__toggle:hover {
+  background-color: rgba(4, 20, 39, 0.15);
+}
+
+.footer__toggle:hover::after {
+  background-color: #00b2ff;
+}
+
+.footer__toggle:hover::before {
+  background-color: #00b2ff;
+}
+
+.footer__toggle:focus {
+  background-color: #8e5c39;
+  opacity: 0.3;
+}
+
+.footer__toggle:focus::after,
+.footer__toggle:focus::before {
+  background-color: #f2f5f6;
+}
+
 .popup {
   position: absolute;
   top: 146px;
@@ -1329,8 +1504,10 @@ button,
 
 .popup__container {
   margin: 0 auto;
-  width: 500px;
-  height: 610px;
+  max-width: 500px;
+  width: 100%;
+  min-width: 270px;
+  min-height: 610px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 40px;
@@ -1345,6 +1522,10 @@ button,
   height: 30px;
   border: none;
   background-color: rgba(255, 255, 255, 0);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .popup__close-button::before,
@@ -1432,10 +1613,20 @@ button,
   border-radius: 3px;
   background-color: #041827;
   letter-spacing: 1px;
+  cursor: pointer;
 }
 
 .popup__fieldset button:hover {
   background-color: #c5c4c9;
+  color: #000000;
+}
+
+.popup__fieldset button:disabled {
+  opacity: 0.3;
+}
+
+.popup__fieldset button:focus {
+  background-color: #8e5c39;
   color: #000000;
 }
 
@@ -1556,9 +1747,14 @@ button,
     height: 100px;
   }
 
+  .header__link {
+    padding-top: 0;
+  }
+
   .header__list {
     width: 80px;
     margin-right: 20px;
+    padding-top: 0;
   }
 
   .header__item a {
@@ -1789,6 +1985,10 @@ button,
     padding: 15px 25px 0 25px;
   }
 
+  .header__link {
+    padding-top: 0;
+  }
+
   .header__logo {
     display: none;
   }
@@ -1933,6 +2133,7 @@ button,
   .about__button {
     width: 160px;
     height: 35px;
+    margin-bottom: 42px;
   }
 
   .feedback {
@@ -2072,18 +2273,24 @@ button,
   }
 
   .footer__toggle {
+    width: 100%;
+    position: absolute;
+    left: 0px;
     display: block;
-    width: 15px;
-    height: 15px;
+    height: 30px;
     border: none;
     background-color: rgba(255, 255, 255, 0);
     cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 
   .footer__toggle::before {
     position: absolute;
     content: "";
-    top: 26px;
+    top: 11px;
     right: 0;
     width: 15px;
     height: 1px;
@@ -2094,7 +2301,7 @@ button,
     position: absolute;
     content: "";
     right: 7px;
-    top: 19px;
+    top: 4px;
     width: 1px;
     height: 15px;
     background-color: #f2f5f6;
@@ -2105,7 +2312,7 @@ button,
     position: absolute;
     content: "";
     right: 7px;
-    top: 19px;
+    top: 4px;
     width: 1px;
     height: 15px;
     background-color: #f2f5f6;
@@ -2140,6 +2347,8 @@ button,
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .feedback__container::before {
+    background-size: cover;
+    background-repeat: no-repeat;
     background-image: url("../img/gallery/airplane@2x.png");
   }
 }
