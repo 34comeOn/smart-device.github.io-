@@ -1,12 +1,12 @@
 .advantages__list {
-  max-width: 1222px;
+  max-width: 1189px;
   padding-top: 120px;
   padding-bottom: 120px;
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr 1fr;
   row-gap: 31px;
   column-gap: 31px;
-  grid-auto-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 
   @include vp-1023 {
     padding-top: 80px;
@@ -29,6 +29,9 @@
   border: 1px solid $color-light-grey;
   border-left: 5px solid $color-blue;
   padding: 40px 45px;
+  padding-left: 41px;
+  padding-bottom: 19px;
+  cursor: pointer;
 
   &:hover {
     background-color: $color-blue;
@@ -64,6 +67,7 @@
   font-weight: 400;
   line-height: 34px;
   color: $color-blue;
+  margin-top: 14px;
 
   @include vp-769 {
     font-size: 20px;
@@ -85,6 +89,7 @@
   height: 120px;
   overflow: hidden;
   overflow-y: auto;
+  margin-top: -12px;
 
   @include vp-1023 {
     height: 190px;

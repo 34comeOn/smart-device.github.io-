@@ -46,12 +46,13 @@
 .about__text-box {
   margin-top: -30px;
   max-height: min-content;
-  margin-bottom: 14px;
+  margin-bottom: 27px;
   overflow: hidden;
   max-width: 970px;
 
   @include vp-769 {
     max-height: 200px;
+    margin-bottom: 14px;
   }
 }
 

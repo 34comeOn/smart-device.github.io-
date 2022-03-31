@@ -3,7 +3,7 @@
 }
 
 .product__container {
-  padding: 70px 75px 120px 75px;
+  padding: 70px 75px 140px 75px;
 
   @include vp-1023 {
     padding: 60px 50px 75px 50px;
@@ -39,7 +39,8 @@
   font-size: 36px;
   line-height: 51px;
   font-weight: 400;
-  margin-top: -20px;
+  margin-top: -5px;
+  padding-bottom: 3px;
 
   @include vp-769 {
     font-size: 28px;
@@ -150,7 +151,7 @@
 }
 
 .product__card h3 {
-  padding-top: 50px;
+  padding-top: 46px;
   padding-left: 40px;
   color: $color-font-white;
   font-size: 20px;
@@ -171,7 +172,7 @@
 
 .product__icon {
   position: relative;
-  bottom: -460px;
+  bottom: -464px;
   left: 290px;
 
   @include vp-1023 {

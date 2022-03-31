@@ -5,12 +5,12 @@ const popupElement = document.querySelector('.popup');
 const popupOpenButtonElement = document.querySelector('.header__button-link');
 const popupCloseButtonElement = popupElement.querySelector('.popup__close-button');
 const footerContainerElement = document.querySelector('.footer__container');
-// const popupSubmitElement = popupElement.querySelector('.popup__button');
 const feedbackFormElement = document.querySelector('.feedback__form');
 const aboutWrapperElement = document.querySelector('.about__info-wrapper');
 const aboutButtonElement = document.querySelector('.about__button');
 const navigationToggleElement = document.querySelector('.footer__toggle-nav');
 const contactsToggleElement = document.querySelector('.footer__toggle-contacts');
+
 
 mainWrapperElement.classList.remove('wrapper--nojs');
 aboutWrapperElement.classList.remove('all-text');
@@ -117,13 +117,28 @@ const validateForm = (form) => {
 
 validateForm(feedbackFormElement);
 
-popupOpenButtonElement.addEventListener('click', function () {
-  const popupNameInputElement = popupElement.querySelector('#popup__close');
+function modalShow() {
+  const popupNameInputElement = popupElement.querySelector('.name-input');
   popupNameInputElement.focus();
+  popupElement.setAttribute('tabindex', '0');
+}
 
+function focusRestrict() {
+  document.addEventListener('focus', function (evt) {
+    if (mainWrapperElement.classList.contains('popup--opened') && !popupElement.contains(evt.target)) {
+      evt.stopPropagation();
+      popupElement.focus();
+    }
+  }, true);
+}
+
+popupOpenButtonElement.addEventListener('click', function () {
+
+  modalShow();
+  focusRestrict();
+  console.log(document.activeElement);
   const popupFormElement = popupElement.querySelector('.popup__form');
   validateForm(popupFormElement);
-
 
   document.addEventListener('keydown', onPopupEscKeydown);
 
@@ -141,11 +156,6 @@ popupOpenButtonElement.addEventListener('click', function () {
       removeEscListener();
     }
   });
-
-  // popupSubmitElement.addEventListener('click', function (evt) {
-  //   // evt.preventDefault();
-  //   closePopup();
-  // });
 });
 
 aboutButtonElement.addEventListener('click', function () {
