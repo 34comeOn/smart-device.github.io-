@@ -22,6 +22,10 @@
     grid-template-columns: 1fr 1fr;
   }
 
+  @include vp-1023 {
+    padding-top: 50px;
+  }
+
   @include vp-769 {
     padding: 35px;
     min-height: 310px;
@@ -58,10 +62,18 @@
     padding-bottom: 30px;
   }
 
+  @include vp-1023 {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 23px;
+  }
+
   @include vp-769 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-right: 0;
   }
 }
 
@@ -69,6 +81,10 @@
   display: flex;
   flex-wrap: wrap;
   padding-left: 15px;
+
+  @include vp-1023 {
+    padding-left: 0;
+  }
 }
 
 .footer__sochials-item {
@@ -76,6 +92,11 @@
 
   @include vp-1365 {
     margin-right: 20px;
+  }
+
+  @include vp-1023 {
+    margin-left: 25px;
+    margin-right: 0;
   }
 }
 
@@ -147,7 +168,7 @@
   }
 }
 
-.navigation--opened .footer__navigation-wrapper {
+.footer__container--navigation-opened .footer__navigation-wrapper {
   @include vp-769 {
     height: min-content;
   }
@@ -162,6 +183,16 @@
   margin-top: 6px;
   padding-bottom: 5px;
   letter-spacing: 1px;
+}
+
+.footer__contacts-wrapper h3 {
+  @include vp-1023 {
+    padding-left: 24px;
+  }
+
+  @include vp-769 {
+    padding-left: 0;
+  }
 }
 
 .footer__navigation-item {
@@ -201,9 +232,19 @@
   }
 }
 
-.contacts--opened .footer__contacts-wrapper {
+.footer__container--contacts-opened .footer__contacts-wrapper {
   @include vp-769 {
     height: min-content;
+  }
+}
+
+.footer__contacts-list {
+  @include vp-1023 {
+    padding-left: 24px;
+  }
+
+  @include vp-769 {
+    padding-left: 0;
   }
 }
 
@@ -233,6 +274,15 @@
   width: 346px;
   margin-top: 2px;
   margin-bottom: 8px;
+
+  @include vp-1023 {
+    padding-left: 24px;
+  }
+
+  @include vp-769 {
+    width: 100%;
+    padding-left: 0;
+  }
 }
 
 .footer__navigation-wrapper a:hover,
@@ -309,7 +359,7 @@
   }
 }
 
-.navigation--opened .navigation-plus-toggle {
+.footer__container--navigation-opened .navigation-plus-toggle {
   @include vp-769 {
     &::after {
       display: none;
@@ -317,7 +367,7 @@
   }
 }
 
-.contacts--opened .contacts-plus-toggle {
+.footer__container--contacts-opened .contacts-plus-toggle {
   @include vp-769 {
     &::after {
       display: none;

@@ -14,8 +14,8 @@ const contactsToggleElement = document.querySelector('.footer__toggle-contacts')
 
 mainWrapperElement.classList.remove('wrapper--nojs');
 aboutWrapperElement.classList.remove('all-text');
-footerContainerElement.classList.remove('navigation--opened');
-footerContainerElement.classList.remove('contacts--opened');
+footerContainerElement.classList.remove('footer__container--navigation-opened');
+footerContainerElement.classList.remove('footer__container--contacts-opened');
 
 const isEscapeKey = (evt) => (
   evt.key === 'Escape'
@@ -171,17 +171,17 @@ aboutButtonElement.addEventListener('click', function () {
 });
 
 const toggleTabs = (footerContainer, hiddingElement, togglingElement) => {
-  if (footerContainer.classList.contains(`${hiddingElement}--opened`)) {
-    footerContainer.classList.remove(`${hiddingElement}--opened`);
+  if (footerContainer.classList.contains(`${hiddingElement}-opened`)) {
+    footerContainer.classList.remove(`${hiddingElement}-opened`);
   }
 
-  footerContainer.classList.toggle(`${togglingElement}--opened`);
+  footerContainer.classList.toggle(`${togglingElement}-opened`);
 };
 
 navigationToggleElement.addEventListener('click', function () {
-  toggleTabs(footerContainerElement, 'contacts', 'navigation');
+  toggleTabs(footerContainerElement, 'footer__container--contacts', 'footer__container--navigation');
 });
 
 contactsToggleElement.addEventListener('click', function () {
-  toggleTabs(footerContainerElement, 'navigation', 'contacts');
+  toggleTabs(footerContainerElement, 'footer__container--navigation', 'footer__container--contacts');
 });
