@@ -118,9 +118,11 @@ const validateForm = (form) => {
 validateForm(feedbackFormElement);
 
 function modalShow() {
-  const popupNameInputElement = popupElement.querySelector('.name-input');
-  popupNameInputElement.focus();
   popupElement.setAttribute('tabindex', '0');
+  const popupNameInputElement = popupElement.querySelector('.name-input');
+  setTimeout(() => {
+    popupNameInputElement.focus();
+  }, 1);
 }
 
 function focusRestrict() {

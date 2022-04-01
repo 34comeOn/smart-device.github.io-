@@ -1592,6 +1592,17 @@ button,
   box-shadow: none;
 }
 
+.popup__close-button:hover::before,
+.popup__close-button:hover::after {
+  background-color: #041827;
+}
+
+.popup__close-button:focus::before,
+.popup__close-button:focus::after {
+  -webkit-box-shadow: 0 0 25px 10px #8e5c39;
+  box-shadow: 0 0 25px 10px #8e5c39;
+}
+
 .popup__container h3 {
   font-size: 30px;
   line-height: 42px;
@@ -1635,6 +1646,11 @@ button,
 .popup__fieldset input:hover,
 .popup__fieldset textarea:hover {
   background-color: #c5c4c9;
+}
+
+.popup__fieldset input:focus,
+.popup__fieldset textarea:focus {
+  background-color: #8e5c39;
 }
 
 .popup__fieldset textarea {
@@ -1707,6 +1723,7 @@ button,
 
 .popup__fieldset label:focus::before {
   outline: 1px solid #000000;
+  background-color: #8e5c39;
 }
 
 .popup__fieldset input[type="checkbox"]:not(:checked) + label::before {
