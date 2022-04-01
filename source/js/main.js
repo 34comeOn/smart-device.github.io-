@@ -1,4 +1,4 @@
-import IMask from 'imask';
+import iMask from 'imask';
 
 const mainWrapperElement = document.querySelector('.wrapper');
 const popupElement = document.querySelector('.popup');
@@ -43,7 +43,7 @@ const setEditClickHandler = (element) => {
       mask: '+{7}(000)000-00-00',
     };
 
-    IMask(element, maskOptions);
+    iMask(element, maskOptions);
   });
 };
 
@@ -133,10 +133,9 @@ function focusRestrict() {
 }
 
 popupOpenButtonElement.addEventListener('click', function () {
-
   modalShow();
   focusRestrict();
-  console.log(document.activeElement);
+
   const popupFormElement = popupElement.querySelector('.popup__form');
   validateForm(popupFormElement);
 

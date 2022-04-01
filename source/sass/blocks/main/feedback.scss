@@ -68,7 +68,7 @@
 
   @include vp-769 {
     width: 100%;
-    padding-bottom: 90px;
+    padding-bottom: 88px;
     padding-top: 50px;
     height: min-content;
   }
@@ -117,6 +117,10 @@
 
   @include vp-769 {
     width: 270px;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: -23px;
+    padding-bottom: 18px;
   }
 }
 
@@ -169,7 +173,7 @@
     color: $color-font-white;
   }
 
-  &::placeholder{
+  &::placeholder {
     user-select: none;
   }
 }
@@ -182,6 +186,11 @@
 
   @include vp-1023 {
     padding-top: 30px;
+  }
+
+  @include vp-769 {
+    padding-top: 23px;
+    height: 181px;
   }
 }
 
@@ -219,6 +228,7 @@
 
   @include vp-769 {
     width: 100%;
+    margin-top: 10px;
   }
 }
 
@@ -242,6 +252,12 @@
     padding-top: 25px;
   }
 
+  @include vp-769 {
+    padding-top: 0;
+    padding-left: 30px;
+    margin-top: -15px;
+  }
+
   &::before {
     position: absolute;
     content: "";
@@ -259,7 +275,12 @@
 
     @include vp-1023 {
       top: 32px;
-      left: 0px;
+      left: 0;
+    }
+
+    @include vp-769 {
+      top: 6px;
+      left: 3px;
     }
   }
 

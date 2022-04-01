@@ -10,7 +10,7 @@
   }
 
   @include vp-769 {
-    padding: 50px 25px 86px 25px;
+    padding: 50px 25px 72px 25px;
   }
 }
 
@@ -66,6 +66,7 @@
   @include vp-769 {
     width: 270px;
     height: 250px;
+    margin-bottom: 13px;
   }
 
   &:focus {
@@ -167,8 +168,10 @@
   }
 
   @include vp-769 {
-    padding-top: 30px;
+    font-size: 18px;
+    padding-top: 27px;
     padding-left: 30px;
+    width: 164px;
   }
 }
 
@@ -185,7 +188,7 @@
   @include vp-769 {
     width: 40px;
     height: 40px;
-    bottom: -100px;
+    bottom: -105px;
     left: 230px;
   }
 }

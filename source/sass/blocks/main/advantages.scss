@@ -18,7 +18,7 @@
   @include vp-769 {
     row-gap: 0;
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 14px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -27,7 +27,7 @@
 
 .advantages__item {
   min-width: 270px;
-  // min-height: 300px;
+  height: 300px;
   box-sizing: border-box;
   border: 1px solid $color-light-grey;
   border-left: 5px solid $color-blue;
@@ -52,10 +52,18 @@
 
   @include vp-769 {
     padding: 30px 30px 35px 25px;
-    padding-bottom: 30px;
+    margin-bottom: 30px;
     height: min-content;
-    min-width: min-content;
+    max-height: 340px;
     min-height: 325px;
+    min-width: min-content;
+  }
+}
+
+.advantages__content-wrapper {
+  @include vp-769 {
+    // min-height: 210px;
+    // border-top: 1px solid $color-transparent;
   }
 }
 
@@ -84,7 +92,7 @@
 
   @include vp-769 {
     font-size: 20px;
-    line-height: 28px;
+    line-height: 32px;
     margin-top: 7px;
   }
 }
@@ -112,9 +120,9 @@
   @include vp-769 {
     font-size: 14px;
     line-height: 19px;
-    margin-top: -10px;
-    min-height: min-content;
+    margin-top: -13px;
     height: min-content;
+    padding-bottom: 23px;
   }
 }
 

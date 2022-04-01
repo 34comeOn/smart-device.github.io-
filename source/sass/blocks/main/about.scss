@@ -60,8 +60,17 @@
   }
 
   @include vp-769 {
-    max-height: 200px;
-    margin-bottom: 14px;
+    max-height: 220px;
+    margin-top: -25px;
+    margin-bottom: 16px;
+  }
+}
+
+.about__text-box br {
+  display: none;
+
+  @include vp-769 {
+    display: block;
   }
 }
 
@@ -102,7 +111,7 @@
   @include vp-769 {
     width: 160px;
     height: 35px;
-    margin-bottom: 42px;
+    margin-bottom: 80px;
   }
 
   &:hover {
