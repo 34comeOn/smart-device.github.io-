@@ -36,6 +36,10 @@
   padding-top: 30px;
   margin-right: 48px;
 
+  @include vp-1365 {
+    margin-right: 0;
+  }
+
   @include vp-1023 {
     padding-top: 20px;
   }

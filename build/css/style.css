@@ -962,7 +962,7 @@ button,
 }
 
 .product__container {
-  padding: 70px 75px 140px 75px;
+  padding: 70px 75px 143px 75px;
 }
 
 .product__list {
@@ -1443,6 +1443,18 @@ button,
   letter-spacing: 1px;
 }
 
+.footer__navigation-list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-row: repeat(4, 40px);
+  width: 500px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+}
+
 .footer__navigation-item {
   width: 250px;
   padding-right: 30px;
@@ -1451,18 +1463,31 @@ button,
   margin-bottom: 6px;
 }
 
-.footer__navigation-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  width: 500px;
-  height: 172px;
+.footer__navigation-item:nth-child(2) {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+}
+
+.footer__navigation-item:nth-child(3) {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3/4;
+}
+
+.footer__navigation-item:nth-child(4) {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 1;
+  grid-row: 4/5;
 }
 
 .footer__contacts-wrapper {
@@ -1795,6 +1820,10 @@ button,
 }
 
 @media (max-width: 1365px) {
+  .header__link {
+    margin-right: 0;
+  }
+
   .header__item {
     margin-right: 45px;
   }
@@ -1881,10 +1910,16 @@ button,
   }
 
   .footer__navigation-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
     width: 250px;
-    height: -webkit-min-content;
-    height: -moz-min-content;
-    height: min-content;
   }
 
   .footer__contacts-wrapper {
