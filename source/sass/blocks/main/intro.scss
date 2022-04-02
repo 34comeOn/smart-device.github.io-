@@ -1,5 +1,5 @@
 .intro {
-  height: 880px;
+  min-height: 880px;
   background-color: $color-card-background;
   background-image: url("../img/gallery/background/intro-background-desktop@1x.jpg");
   background-repeat: no-repeat;
@@ -7,13 +7,13 @@
   background-position: center bottom;
 
   @include vp-1023 {
-    height: 560px;
+    min-height: 560px;
     min-width: 770px;
     background-image: url("../img/gallery/background/intro-background-tablet@1x.jpg");
   }
 
   @include vp-769 {
-    height: 510px;
+    min-height: 510px;
     min-width: 320px;
     background-image: url("../img/gallery/background/intro-background-mobile@1x.jpg");
   }

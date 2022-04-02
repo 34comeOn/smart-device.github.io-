@@ -1,5 +1,5 @@
 .feedback {
-  height: 840px;
+  min-height: 840px;
   padding-left: 695px;
   background-color: $color-blue;
   background-image: url("../img/gallery/background/feedback@1x.png");
@@ -13,13 +13,14 @@
   }
 
   @include vp-1023 {
-    height: 580px;
+    min-height: 580px;
     min-width: 770px;
     background-image: none;
   }
 
   @include vp-769 {
     height: min-content;
+    min-height: min-content;
     min-width: 220px;
   }
 
@@ -33,7 +34,7 @@
 .feedback__container {
   margin: 0 auto;
   width: 655px;
-  height: 610px;
+  min-height: 580px;
   box-sizing: border-box;
   padding: 0;
   padding-top: 170px;
@@ -63,7 +64,7 @@
   @include vp-1023 {
     width: 770px;
     padding: 50px;
-    padding-bottom: 125px;
+    padding-bottom: 105px;
   }
 
   @include vp-769 {

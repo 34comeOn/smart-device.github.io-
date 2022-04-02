@@ -14,18 +14,19 @@
 }
 
 .header__container {
-  height: 120px;
+  min-height: 120px;
+  height: min-content;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   padding-right: 135px;
 
   @include vp-1023 {
-    height: 100px;
+    min-height: 100px;
   }
 
   @include vp-769 {
-    height: 70px;
+    min-height: 70px;
     padding: 15px 25px 0 25px;
   }
 }
@@ -33,7 +34,7 @@
 .header__link {
   pointer-events: none;
   padding-top: 30px;
-  margin-right: 91px;
+  margin-right: 48px;
 
   @include vp-1023 {
     padding-top: 20px;
@@ -65,6 +66,7 @@
   justify-content: space-between;
   width: max-content;
   padding-top: 45px;
+  flex-wrap: wrap;
 
   @include vp-1023 {
     width: 83px;
@@ -96,6 +98,8 @@
 
 .header__item {
   margin-right: 60px;
+  margin-left: 45px;
+  margin-bottom: 20px;
 
   @include vp-1365 {
     margin-right: 45px;
@@ -103,11 +107,12 @@
 
   @include vp-1023 {
     margin-right: 0;
+    margin-left: 0;
   }
 }
 
 .header__item--email {
-  margin-right: 156px;
+  margin-right: 110px;
 }
 
 .header__item--phone {
@@ -189,7 +194,10 @@
   border: 1px solid $color-font-white;
   border-radius: 3px;
   color: $color-font-white;
-  width: 160px;
+  width: 140px;
+  min-width: max-content;
+  padding-left: 14px;
+  padding-right: 14px;
   height: 40px;
   padding-top: 9px;
   margin-top: 35px;
