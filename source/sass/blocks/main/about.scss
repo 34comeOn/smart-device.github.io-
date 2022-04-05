@@ -16,7 +16,7 @@
     margin-left: -4px;
   }
 
-  @include vp-769 {
+  @include vp-767 {
     display: none;
   }
 }
@@ -30,7 +30,7 @@
     padding-left: 29px;
   }
 
-  @include vp-769 {
+  @include vp-767 {
     padding-left: 0;
   }
 }
@@ -41,7 +41,7 @@
   font-weight: 400;
   margin-top: -4px;
 
-  @include vp-769 {
+  @include vp-767 {
     font-size: 28px;
     line-height: 40px;
   }
@@ -59,7 +59,7 @@
     margin-bottom: 3px;
   }
 
-  @include vp-769 {
+  @include vp-767 {
     max-height: 220px;
     margin-top: -25px;
     margin-bottom: 16px;
@@ -69,7 +69,7 @@
 .about__text-box br {
   display: none;
 
-  @include vp-769 {
+  @include vp-767 {
     display: block;
   }
 }
@@ -83,7 +83,7 @@
   font-size: 16px;
   line-height: 22px;
 
-  @include vp-769 {
+  @include vp-767 {
     font-size: 14px;
     line-height: 19px;
   }
@@ -108,7 +108,7 @@
   line-height: 16px;
   user-select: none;
 
-  @include vp-769 {
+  @include vp-767 {
     width: 160px;
     height: 35px;
     margin-bottom: 80px;

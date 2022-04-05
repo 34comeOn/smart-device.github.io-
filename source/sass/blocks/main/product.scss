@@ -9,7 +9,7 @@
     padding: 60px 50px 65px 50px;
   }
 
-  @include vp-769 {
+  @include vp-767 {
     padding: 50px 25px 72px 25px;
   }
 }
@@ -33,6 +33,10 @@
     column-gap: 0;
     row-gap: 0;
   }
+
+  @include vp-767 {
+    width: 100%;
+  }
 }
 
 .product__container h2 {
@@ -42,7 +46,7 @@
   font-weight: 400;
   margin-top: -5px;
 
-  @include vp-769 {
+  @include vp-767 {
     font-size: 28px;
     line-height: 39px;
     width: 250px;
@@ -63,8 +67,9 @@
     margin-bottom: 10px;
   }
 
-  @include vp-769 {
-    width: 270px;
+  @include vp-767 {
+    position: relative;
+    width: 100%;
     height: 250px;
     margin-bottom: 13px;
   }
@@ -81,7 +86,7 @@
     background-image: url("../img/gallery/background/cards/manufacture-tablet@1x.jpg");
   }
 
-  @include vp-769 {
+  @include vp-767 {
     background-image: url("../img/gallery/background/cards/manufacture-mobile@1x.jpg");
   }
 
@@ -94,7 +99,7 @@
       background-image: url("../img/gallery/background/cards/manufacture-tablet@2x.jpg");
     }
 
-    @include vp-769 {
+    @include vp-767 {
       background-image: url("../img/gallery/background/cards/manufacture-mobile@2x.jpg");
     }
   }
@@ -107,7 +112,7 @@
     background-image: url("../img/gallery/background/cards/mounting-tablet@1x.jpg");
   }
 
-  @include vp-769 {
+  @include vp-767 {
     background-image: url("../img/gallery/background/cards/mounting-mobile@1x.jpg");
   }
 
@@ -120,7 +125,7 @@
       background-image: url("../img/gallery/background/cards/mounting-tablet@2x.jpg");
     }
 
-    @include vp-769 {
+    @include vp-767 {
       background-image: url("../img/gallery/background/cards/mounting-mobile@2x.jpg");
     }
   }
@@ -133,7 +138,7 @@
     background-image: url("../img/gallery/background/cards/accessories-tablet@1x.jpg");
   }
 
-  @include vp-769 {
+  @include vp-767 {
     background-image: url("../img/gallery/background/cards/accessories-mobile@1x.jpg");
   }
 
@@ -146,7 +151,7 @@
       background-image: url("../img/gallery/background/cards/accessories-tablet@2x.jpg");
     }
 
-    @include vp-769 {
+    @include vp-767 {
       background-image: url("../img/gallery/background/cards/accessories-mobile@2x.jpg");
     }
   }
@@ -167,7 +172,7 @@
     width: 195px;
   }
 
-  @include vp-769 {
+  @include vp-767 {
     font-size: 18px;
     padding-top: 27px;
     padding-left: 30px;
@@ -185,11 +190,14 @@
     left: 610px;
   }
 
-  @include vp-769 {
+  @include vp-767 {
+    position: absolute;
+    z-index: 1;
     width: 40px;
     height: 40px;
-    bottom: -105px;
-    left: 230px;
+    bottom: 0;
+    left: auto;
+    right: 1px;
   }
 }
 
