@@ -242,21 +242,24 @@
   line-height: 16px;
   font-family: $ff-placeholder-decorative-regular;
   color: $color-font-white;
-  padding-left: 36px;
-  padding-top: 29px;
+  padding-left: 75px;
+  padding-top: 30px;
+  width: 274px;
   cursor: pointer;
   user-select: none;
   position: relative;
 
   @include vp-1023 {
-    padding-left: 26px;
+    padding-left: 109px;
     padding-top: 25px;
+    width: 313px;
   }
 
   @include vp-767 {
-    padding-top: 0;
+    padding-top: 13px;
     padding-left: 30px;
-    margin-top: -15px;
+    margin-top: -8px;
+    width: 232px;
   }
 
   &::before {
@@ -266,7 +269,7 @@
     width: 17px;
     height: 17px;
     top: 36px;
-    left: 9px;
+    left: 49px;
     background-color: $color-blue;
     border: 1px solid $color-font-white;
     border-radius: 3px;
@@ -275,13 +278,13 @@
     background-position: center;
 
     @include vp-1023 {
-      top: 32px;
-      left: 0;
+      top: 30px;
+      left: 84px;
     }
 
     @include vp-767 {
-      top: 6px;
-      left: 3px;
+      top: 18px;
+      left: 4px;
     }
   }
 

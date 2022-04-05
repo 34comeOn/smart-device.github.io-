@@ -6,7 +6,7 @@
   grid-template-columns: 1fr 1fr;
   row-gap: 31px;
   column-gap: 31px;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: min-content min-content;
 
   @include vp-1023 {
     padding-top: 80px;
@@ -27,7 +27,8 @@
 
 .advantages__item {
   min-width: 270px;
-  height: 300px;
+  min-height: 300px;
+  height: 100%;
   box-sizing: border-box;
   border: 1px solid $color-light-grey;
   border-left: 5px solid $color-blue;
@@ -40,14 +41,10 @@
     background-color: $color-blue;
   }
 
-  &:focus {
-    background-color: $color-card-focus;
-  }
-
   @include vp-1023 {
     padding: 40px;
-    padding-bottom: 35px;
-    height: 360px;
+    padding-bottom: 16px;
+    min-height: 360px;
   }
 
   @include vp-767 {
@@ -57,13 +54,6 @@
     max-height: 340px;
     min-height: 325px;
     min-width: min-content;
-  }
-}
-
-.advantages__content-wrapper {
-  @include vp-767 {
-    // min-height: 210px;
-    // border-top: 1px solid $color-transparent;
   }
 }
 
@@ -107,14 +97,11 @@
   line-height: 22px;
   font-family: $ff-placeholder-decorative-regular;
   color: $color-default-black;
-  height: 120px;
-  overflow: hidden;
-  overflow-y: auto;
+  min-height: 120px;
   margin-top: -12px;
 
   @include vp-1023 {
     margin-top: -17px;
-    height: 201px;
   }
 
   @include vp-767 {
@@ -126,13 +113,7 @@
   }
 }
 
-.advantages__item:hover p,
-.advantages__item:focus p {
+.advantages__item:hover p {
   color: $color-font-white;
   opacity: 1;
-}
-
-.advantages__item p:focus {
-  background-color: $color-card-focus;
-  color: $color-font-white;
 }

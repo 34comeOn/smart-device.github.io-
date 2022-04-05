@@ -83,23 +83,26 @@ const validateForm = (form) => {
   const phoneInputElement = form.querySelector('input[name="phone"]');
   const labelFormElement = form.querySelector('.checkbox-label');
   const buttonFormElement = form.querySelector('.form__button');
+  const formCheckboxElement = form.querySelector('.form__checkbox');
 
   const onLabelClick = (label, submitButton) => {
     if (!label.classList.contains('checkbox-label--checked')) {
       label.classList.add('checkbox-label--checked');
       submitButton.removeAttribute('disabled');
+      formCheckboxElement.setAttribute('checked', 'checked');
     } else {
       label.classList.remove('checkbox-label--checked');
       submitButton.setAttribute('disabled', 'disabled');
+      formCheckboxElement.removeAttribute('checked');
     }
   };
 
-  const pushLabel = (someLabel, buttonToDisable) => {
+  const interactLabel = (someLabel, buttonToDisable) => {
     onLabelClick(someLabel, buttonToDisable);
   };
   const onLabelEnterKeydown = (evtClose) => {
     if (isEnterKey(evtClose)) {
-      pushLabel(labelFormElement, buttonFormElement);
+      interactLabel(labelFormElement, buttonFormElement);
     }
   };
 

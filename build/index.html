@@ -27,7 +27,7 @@
           </a>
           <ul class="header__list list">
             <li class="header__item header__item--email">
-              <a href="e-mail:info@sd.ru">
+              <a href="mailto:info@sd.ru">
                 info@sd.ru
               </a>
             </li>
@@ -67,69 +67,61 @@
           </h2>
           <div class="advantages__container container">
             <ul class="advantages__list list">
-              <li class="advantages__item" tabindex="0">
+              <li class="advantages__item">
                 <div class="advantages__icon-wrapper">
                   <svg class="advantages__icon" width="35" height="35" fill="#00b2ff">
                     <use xlink:href="img/sprite/sprite.svg#icon-clock">
                     </use>
                   </svg>
                 </div>
-                <div class="advantages__content-wrapper">
-                  <h3>
-                    Оперативные сроки
-                  </h3>
-                  <p tabindex="0">
-                    Усовершенствованная логистическая система позволяет нам просчитывать стоимость, производить и доставлять заказы плат и комплектующих в самые короткие сроки
-                  </p>
-                </div>
+                <h3>
+                  Оперативные сроки
+                </h3>
+                <p>
+                  Усовершенствованная логистическая система позволяет нам просчитывать стоимость, производить и&nbsp;доставлять заказы плат и&nbsp;комплектующих в&nbsp;самые короткие сроки
+                </p>
               </li>
-              <li class="advantages__item" tabindex="0">
+              <li class="advantages__item">
                 <div class="advantages__icon-wrapper">
                   <svg class="advantages__icon" width="35" height="35" fill="#00b2ff">
                     <use xlink:href="img/sprite/sprite.svg#icon-suppliers">
                     </use>
                   </svg>
                 </div>
-                <div class="advantages__content-wrapper">
-                  <h3>
-                    Крупные поставщики
-                  </h3>
-                  <p tabindex="0">
-                    Нашими поставщиками являются такие крупные мировые компании как: OSRAM, CREE, HOLGLITRONIC, REFOND. Сотрудничество с такими компаниями обеспичивает хорошее качество нашей продукции.
-                  </p>
-                </div>
+                <h3>
+                  Крупные поставщики
+                </h3>
+                <p>
+                  Нашими поставщиками являются такие крупные мировые компании как: OSRAM, CREE, HOLGLITRONIC, REFOND. Сотрудничество с&nbsp;такими компаниями обеспичивает хорошее качество нашей продукции.
+                </p>
               </li>
-              <li class="advantages__item" tabindex="0">
+              <li class="advantages__item">
                 <div class="advantages__icon-wrapper">
                   <svg class="advantages__icon" width="35" height="35" fill="#00b2ff">
                     <use xlink:href="img/sprite/sprite.svg#icon-detective">
                     </use>
                   </svg>
                 </div>
-                <div class="advantages__content-wrapper">
-                  <h3>
-                    Полная конфиденциальность
-                  </h3>
-                  <p tabindex="0">
-                    По желанию клиента мы обеспечиваем полную конфеденциальность.
-                  </p>
-                </div>
+                <h3>
+                  Полная конфиденциальность
+                </h3>
+                <p>
+                  По&nbsp;желанию клиента мы&nbsp;обеспечиваем полную конфеденциальность.
+                </p>
               </li>
-              <li class="advantages__item" tabindex="0">
+              <li class="advantages__item">
                 <div class="advantages__icon-wrapper">
                   <svg class="advantages__icon" width="35" height="35" fill="#00b2ff">
                     <use xlink:href="img/sprite/sprite.svg#icon-tag">
                     </use>
                   </svg>
                 </div>
-                <div class="advantages__content-wrapper">
-                  <h3>
-                    Персонализация стоимости
-                  </h3>
-                  <p tabindex="0">
-                    Мы  подбираем определенную фабрику, поставщиков, вид доставки, чтобы установить ту цену, которая Вас устраивает.
-                  </p>
-                </div>
+                <h3>
+                  Персонализация стоимости
+                </h3>
+                <p>
+                  Мы&nbsp;подбираем определенную фабрику, поставщиков, вид доставки, чтобы установить ту&nbsp;цену, которая Вас устраивает.
+                </p>
               </li>
             </ul>
           </div>
@@ -220,13 +212,15 @@
                 <input type="text" name="name" aria-label="Ввести свое имя" placeholder="Имя" required>
                 <input class="phone-input" type="text" name="phone" aria-label="Ввести номер телефона" placeholder="Телефон" required>
                 <textarea cols="30" rows="10" name="user-question" aria-label="Напишите" placeholder="Ваш вопрос"></textarea>
-                <button class="form__button" type="submit" aria-label="Отправить форму">
-                  Задать вопрос
-                </button>
-                <input class="form__checkbox" type="checkbox" id="feedback-checkbox" name="agreement" aria-label="поставить флажок о согласии" checked>
-                <label class="checkbox-label checkbox-label--checked" for="feedback-checkbox" tabindex="0">
-                  Я согласен на обработку  персональных данных
-                </label>
+                <div class="form__wrapper">
+                  <input class="form__checkbox" type="checkbox" id="feedback-checkbox" name="agreement" aria-label="поставить флажок о согласии" checked>
+                  <label class="checkbox-label checkbox-label--checked" for="feedback-checkbox" tabindex="0">
+                    Я согласен на обработку  персональных данных
+                  </label>
+                  <button class="form__button" type="submit" aria-label="Отправить форму">
+                    Задать вопрос
+                  </button>
+                </div>
               </fieldset>
             </form>
           </div>
@@ -366,13 +360,15 @@
               <input type="text" class="name-input" name="name" aria-label="Ввести свое имя" placeholder="Имя" required>
               <input class="phone-input" type="text" name="phone" aria-label="Ввести номер телефона" placeholder="Телефон" required>
               <textarea cols="30" rows="10" name="user-question" aria-label="Напишите" placeholder="Ваш вопрос"></textarea>
-              <button class="popup__button form__button" type="submit" aria-label="Отправить форму">
-                Отправить
-              </button>
-              <input class="form__checkbox" type="checkbox" id="popup-checkbox" name="agreement" aria-label="поставить флажок о согласии" checked>
-              <label class="checkbox-label checkbox-label--checked" for="popup-checkbox" tabindex="0">
-                Я согласен на обработку  персональных данных
-              </label>
+              <div class="popup__wrapper">
+                <input class="form__checkbox" type="checkbox" id="popup-checkbox" name="agreement" aria-label="поставить флажок о согласии" checked>
+                <label class="checkbox-label checkbox-label--checked" for="popup-checkbox" tabindex="0">
+                  Я согласен на обработку  персональных данных
+                </label>
+                <button class="popup__button form__button" type="submit" aria-label="Отправить форму">
+                  Отправить
+                </button>
+              </div>
             </fieldset>
           </form>
         </div>
