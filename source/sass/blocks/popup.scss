@@ -58,10 +58,7 @@
   }
 
   &:focus {
-    &::before,
-    &::after {
-      box-shadow: 0 0 25px 10px $color-card-focus;
-    }
+    background-color: $color-very-dark;
   }
 }
 
@@ -81,6 +78,10 @@
   color: $color-font-white;
   margin-top: -26px;
   padding-bottom: 20px;
+
+  @include vp-767 {
+    width: 100%;
+  }
 }
 
 .popup__fieldset {

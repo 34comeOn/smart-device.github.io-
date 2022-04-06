@@ -1653,10 +1653,8 @@ button,
   background-color: #041827;
 }
 
-.popup__close-button:focus::before,
-.popup__close-button:focus::after {
-  -webkit-box-shadow: 0 0 25px 10px #8e5c39;
-  box-shadow: 0 0 25px 10px #8e5c39;
+.popup__close-button:focus {
+  background-color: #041827;
 }
 
 .popup__container h3 {
@@ -2699,6 +2697,10 @@ button,
 
   .footer__container--contacts-opened .contacts-plus-toggle::after {
     display: none;
+  }
+
+  .popup__container p {
+    width: 100%;
   }
 }
 

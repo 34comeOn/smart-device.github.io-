@@ -1,7 +1,10 @@
 import iMask from 'imask';
+import * as focusTrap from 'focus-trap';
+// const focusTrap = require('focus-trap');
 
 const mainWrapperElement = document.querySelector('.wrapper');
 const popupElement = document.querySelector('.popup');
+const popupNameInputElement = document.querySelector('.name-input');
 const popupOpenButtonElement = document.querySelector('.header__button-link');
 const popupCloseButtonElement = popupElement.querySelector('.popup__close-button');
 const footerContainerElement = document.querySelector('.footer__container');
@@ -89,6 +92,16 @@ const validateForm = (form) => {
     if (!label.classList.contains('checkbox-label--checked')) {
       label.classList.add('checkbox-label--checked');
       submitButton.removeAttribute('disabled');
+    } else {
+      label.classList.remove('checkbox-label--checked');
+      submitButton.setAttribute('disabled', 'disabled');
+    }
+  };
+
+  const onLabelEnterPush = (label, submitButton) => {
+    if (!label.classList.contains('checkbox-label--checked')) {
+      label.classList.add('checkbox-label--checked');
+      submitButton.removeAttribute('disabled');
       formCheckboxElement.setAttribute('checked', 'checked');
     } else {
       label.classList.remove('checkbox-label--checked');
@@ -98,10 +111,10 @@ const validateForm = (form) => {
   };
 
   const interactLabel = (someLabel, buttonToDisable) => {
-    onLabelClick(someLabel, buttonToDisable);
+    onLabelEnterPush(someLabel, buttonToDisable);
   };
-  const onLabelEnterKeydown = (evtClose) => {
-    if (isEnterKey(evtClose)) {
+  const onLabelEnterKeydown = (evtEnterKeydown) => {
+    if (isEnterKey(evtEnterKeydown)) {
       interactLabel(labelFormElement, buttonFormElement);
     }
   };
@@ -120,26 +133,29 @@ const validateForm = (form) => {
 
 validateForm(feedbackFormElement);
 
-function modalShow() {
-  popupElement.setAttribute('tabindex', '0');
-  const popupNameInputElement = popupElement.querySelector('.name-input');
-  setTimeout(() => {
-    popupNameInputElement.focus();
-  }, 1);
-}
+// function modalShow() {
+//   popupElement.setAttribute('tabindex', '0');
+//   const popupNameInputElement = popupElement.querySelector('.name-input');
+//   setTimeout(() => {
+//     popupNameInputElement.focus();
+//   }, 1);
+// }
 
-function focusRestrict() {
-  document.addEventListener('focus', function (evt) {
-    if (mainWrapperElement.classList.contains('popup--opened') && !popupElement.contains(evt.target)) {
-      evt.stopPropagation();
-      popupElement.focus();
-    }
-  }, true);
-}
+// function focusRestrict() {
+//   document.addEventListener('focus', function (evt) {
+//     if (mainWrapperElement.classList.contains('popup--opened') && !popupElement.contains(evt.target)) {
+//       evt.stopPropagation();
+//       popupElement.focus();
+//       console.log(document.activeElement);
+//     }
+//   }, true);
+// }
 
 popupOpenButtonElement.addEventListener('click', function () {
-  modalShow();
-  focusRestrict();
+
+  // modalShow();
+  // focusRestrict();
+  // console.log(document.activeElement);
 
   const popupFormElement = popupElement.querySelector('.popup__form');
   validateForm(popupFormElement);
@@ -161,6 +177,14 @@ popupOpenButtonElement.addEventListener('click', function () {
     }
   });
 });
+
+const modalFocusTrap = focusTrap.createFocusTrap('#popup', {
+  onActivate: () => popupNameInputElement.focus(),
+});
+
+
+popupOpenButtonElement.addEventListener('click', modalFocusTrap.activate);
+popupCloseButtonElement.addEventListener('click', modalFocusTrap.deactivate);
 
 aboutButtonElement.addEventListener('click', function () {
   aboutWrapperElement.classList.toggle('all-text');
