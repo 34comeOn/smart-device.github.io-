@@ -1593,6 +1593,8 @@ button,
   width: 100%;
   z-index: 20;
   display: none;
+  overflow-y: scroll;
+  height: 75vh;
 }
 
 .popup--opened .popup {
@@ -1609,12 +1611,13 @@ button,
   box-sizing: border-box;
   padding: 40px;
   background-color: #00b2ff;
+  position: relative;
 }
 
 .popup__close-button {
-  position: relative;
-  right: -411px;
-  top: -21px;
+  position: absolute;
+  right: 20px;
+  top: 19px;
   width: 30px;
   height: 30px;
   border: none;
@@ -1662,7 +1665,7 @@ button,
   line-height: 42px;
   font-weight: 400;
   color: #f2f5f6;
-  margin-top: -33px;
+  margin-top: -4px;
 }
 
 .popup__container p {
@@ -2087,6 +2090,7 @@ button,
   .product__card {
     width: 670px;
     height: 250px;
+    margin: 0 auto;
     margin-bottom: 10px;
   }
 
@@ -2697,6 +2701,10 @@ button,
 
   .footer__container--contacts-opened .contacts-plus-toggle::after {
     display: none;
+  }
+
+  .popup {
+    left: auto;
   }
 
   .popup__container p {

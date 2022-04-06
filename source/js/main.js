@@ -1,6 +1,5 @@
 import iMask from 'imask';
 import * as focusTrap from 'focus-trap';
-// const focusTrap = require('focus-trap');
 
 const mainWrapperElement = document.querySelector('.wrapper');
 const popupElement = document.querySelector('.popup');
@@ -33,6 +32,7 @@ const onPopupEscKeydown = (evtClose) => {
   if (isEscapeKey(evtClose)) {
     evtClose.preventDefault();
     closePopup();
+    modalFocusTrap.deactivate();
   }
 };
 
@@ -133,30 +133,11 @@ const validateForm = (form) => {
 
 validateForm(feedbackFormElement);
 
-// function modalShow() {
-//   popupElement.setAttribute('tabindex', '0');
-//   const popupNameInputElement = popupElement.querySelector('.name-input');
-//   setTimeout(() => {
-//     popupNameInputElement.focus();
-//   }, 1);
-// }
-
-// function focusRestrict() {
-//   document.addEventListener('focus', function (evt) {
-//     if (mainWrapperElement.classList.contains('popup--opened') && !popupElement.contains(evt.target)) {
-//       evt.stopPropagation();
-//       popupElement.focus();
-//       console.log(document.activeElement);
-//     }
-//   }, true);
-// }
+const modalFocusTrap = focusTrap.createFocusTrap('#popup', {
+  onActivate: () => popupNameInputElement.focus(),
+});
 
 popupOpenButtonElement.addEventListener('click', function () {
-
-  // modalShow();
-  // focusRestrict();
-  // console.log(document.activeElement);
-
   const popupFormElement = popupElement.querySelector('.popup__form');
   validateForm(popupFormElement);
 
@@ -168,23 +149,18 @@ popupOpenButtonElement.addEventListener('click', function () {
   popupCloseButtonElement.addEventListener('click', function () {
     closePopup();
     removeEscListener();
+    modalFocusTrap.deactivate();
   });
 
   document.addEventListener('click', function (evt) {
     if (!evt.target.closest('.popup__container') && !evt.target.classList.contains('header__button-link') && mainWrapperElement.classList.contains('popup--opened')) {
       closePopup();
       removeEscListener();
+      modalFocusTrap.deactivate();
     }
   });
+  modalFocusTrap.activate();
 });
-
-const modalFocusTrap = focusTrap.createFocusTrap('#popup', {
-  onActivate: () => popupNameInputElement.focus(),
-});
-
-
-popupOpenButtonElement.addEventListener('click', modalFocusTrap.activate);
-popupCloseButtonElement.addEventListener('click', modalFocusTrap.deactivate);
 
 aboutButtonElement.addEventListener('click', function () {
   aboutWrapperElement.classList.toggle('all-text');
