@@ -1161,9 +1161,11 @@ button,
   position: absolute;
   content: "";
   top: 246px;
-  left: -630px;
-  width: 510px;
-  height: 285px;
+  right: 771px;
+  width: 27vw;
+  height: 15vw;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-image: url("../img/gallery/airplane@1x.png");
 }
 
@@ -1415,11 +1417,11 @@ button,
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  padding-left: 15px;
+  padding-left: 10px;
 }
 
 .footer__sochials-item {
-  margin-right: 25px;
+  margin-right: 15px;
 }
 
 .footer__sochials-pic:hover {
@@ -1427,8 +1429,16 @@ button,
 }
 
 .footer__sochials-link {
-  display: block;
-  width: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 40px;
   height: 40px;
 }
 
@@ -1437,7 +1447,7 @@ button,
 }
 
 .footer__link-logo {
-  padding-bottom: 28px;
+  padding-bottom: 22px;
 }
 
 .footer__navigation {
@@ -1866,16 +1876,10 @@ button,
 
   .feedback {
     padding-left: 0;
-    background-image: none;
   }
 
   .feedback__container {
-    padding-right: 0;
-    width: 580px;
-  }
-
-  .feedback__container::before {
-    display: none;
+    margin-right: 0;
   }
 
   .footer__container {
@@ -1953,6 +1957,12 @@ button,
     -ms-grid-row: 2;
     -ms-grid-row-span: 1;
     grid-row: 2/3;
+  }
+}
+
+@media (max-width: 1169px) {
+  .feedback__container::before {
+    right: 66vw;
   }
 }
 
@@ -2145,6 +2155,11 @@ button,
     width: 770px;
     padding: 50px;
     padding-bottom: 105px;
+    margin-right: auto;
+  }
+
+  .feedback__container::before {
+    display: none;
   }
 
   .feedback__container h3 {
@@ -2183,10 +2198,12 @@ button,
 
   .footer__sochials-list {
     padding-left: 0;
+    margin-top: -13px;
+    margin-right: -5px;
   }
 
   .footer__sochials-item {
-    margin-left: 25px;
+    margin-left: 15px;
     margin-right: 0;
   }
 
@@ -2554,12 +2571,13 @@ button,
     -ms-flex-align: center;
     align-items: center;
     margin-right: 0;
-    padding-bottom: 19px;
+    padding-bottom: 25px;
   }
 
   .footer__sochials-list {
     padding-top: 13px;
-    margin-left: -21px;
+    margin-top: -5px;
+    margin-left: -17px;
   }
 
   .footer__link-logo {
@@ -2732,8 +2750,6 @@ button,
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .feedback__container::before {
-    background-size: cover;
-    background-repeat: no-repeat;
     background-image: url("../img/gallery/airplane@2x.png");
   }
 }
