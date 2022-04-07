@@ -50,8 +50,8 @@ const setEditClickHandler = (element) => {
   });
 };
 
-const isEnterKey = (evt) => (
-  evt.key === 'Enter'
+const isSpaceKey = (evt) => (
+  evt.key === ' '
 );
 
 const nameInputRe = /[A-Za-zA-Яа-яЁё0-9\s]$/;
@@ -113,8 +113,9 @@ const validateForm = (form) => {
   const interactLabel = (someLabel, buttonToDisable) => {
     onLabelEnterPush(someLabel, buttonToDisable);
   };
-  const onLabelEnterKeydown = (evtEnterKeydown) => {
-    if (isEnterKey(evtEnterKeydown)) {
+  const onLabelSpaceKeydown = (evtSpaceKeydown) => {
+    if (isSpaceKey(evtSpaceKeydown)) {
+      evtSpaceKeydown.preventDefault();
       interactLabel(labelFormElement, buttonFormElement);
     }
   };
@@ -123,7 +124,7 @@ const validateForm = (form) => {
     onLabelClick(labelFormElement, buttonFormElement);
   });
 
-  labelFormElement.addEventListener('keydown', onLabelEnterKeydown);
+  labelFormElement.addEventListener('keydown', onLabelSpaceKeydown);
 
   validateInput(nameInputElement, nameInputRe, 'Здесь могут быть только буквы и цифры');
   validateInput(phoneInputElement, phoneInputRe, 'Здесь могут быть только цифры');

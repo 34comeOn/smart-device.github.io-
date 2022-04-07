@@ -641,9 +641,9 @@ button,
   -webkit-box-direction: reverse;
   -ms-flex-direction: row-reverse;
   flex-direction: row-reverse;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -ms-grid-row: 3;
   -ms-grid-row-span: 1;
   grid-row: 3/4;
@@ -1322,9 +1322,10 @@ button,
   line-height: 16px;
   font-family: "PTMono-Regular", "Arial", sans-serif;
   color: #f2f5f6;
-  padding-left: 75px;
-  padding-top: 30px;
-  width: 274px;
+  margin-left: 42px;
+  margin-right: 28px;
+  margin-top: 30px;
+  width: 209px;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1339,8 +1340,8 @@ button,
   cursor: pointer;
   width: 17px;
   height: 17px;
-  top: 36px;
-  left: 49px;
+  top: 7px;
+  left: -26px;
   background-color: #00b2ff;
   border: 1px solid #f2f5f6;
   border-radius: 3px;
@@ -2182,14 +2183,17 @@ button,
   }
 
   .feedback__fieldset label {
-    padding-left: 109px;
-    padding-top: 25px;
-    width: 313px;
+    margin-left: 4px;
+    margin-right: 69px;
+    margin-top: 17px;
+    padding-left: 0;
+    padding-top: 6px;
+    width: 226px;
   }
 
   .feedback__fieldset label::before {
-    top: 30px;
-    left: 84px;
+    top: 13px;
+    left: -26px;
   }
 
   .footer__container {
@@ -2523,14 +2527,15 @@ button,
 
   .feedback__fieldset label {
     padding-top: 13px;
-    padding-left: 30px;
     margin-top: -8px;
-    width: 232px;
+    margin-left: 30px;
+    margin-right: 4px;
+    width: 224px;
   }
 
   .feedback__fieldset label::before {
     top: 18px;
-    left: 4px;
+    left: -26px;
   }
 
   .footer__container {
