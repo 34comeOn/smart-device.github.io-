@@ -1325,6 +1325,7 @@ button,
   margin-left: 42px;
   margin-right: 28px;
   margin-top: 30px;
+  margin-bottom: 20px;
   width: 209px;
   cursor: pointer;
   -webkit-user-select: none;
@@ -2186,6 +2187,7 @@ button,
     margin-left: 4px;
     margin-right: 69px;
     margin-top: 17px;
+    margin-bottom: 20px;
     padding-left: 0;
     padding-top: 6px;
     width: 226px;
@@ -2528,6 +2530,7 @@ button,
   .feedback__fieldset label {
     padding-top: 13px;
     margin-top: -8px;
+    margin-bottom: 1px;
     margin-left: 30px;
     margin-right: 4px;
     width: 224px;
