@@ -2,16 +2,16 @@
 
 Tools & technologies:
 
--Figma;
--HTML;
--CSS;
--JS;
--iMaskJS;
--focusTrap;
--Git;
--Gulp;
--BEM;
--Sass;
+Figma
+HTML
+CSS
+JS
+iMaskJS
+focusTrap
+Git
+Gulp
+BEM
+Sass
 
 
 ## [Гайд по работе со сборкой](/GUIDE.md) 📕
