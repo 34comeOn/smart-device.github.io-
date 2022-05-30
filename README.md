@@ -1,7 +1,6 @@
 2nd developing skills project "Smart-device" (adaptive layout).
 
 Tools & technologies:
-
 Figma
 HTML
 CSS
